@@ -1,11 +1,38 @@
 import { useTheme } from "@emotion/react";
-import { Avatar, Grid, Typography } from "@mui/material";
+import {
+  Avatar,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import React from "react";
-import { annoucement, cale, home01 } from "../assets";
-import { AnnouncementOutlined } from "@mui/icons-material";
+import { annoucement, cale, home01, home02, home03 } from "../assets";
+import {
+  AnnouncementOutlined,
+  CampaignOutlined,
+  ShoppingCart,
+  ShoppingCartOutlined,
+  WalletOutlined,
+} from "@mui/icons-material";
 
 const LandingPage = () => {
   const theme = useTheme();
+  const arr = [
+    {
+      key: " Step 1",
+      val: "Create your bespoke wishlist and select your preferred gifts",
+    },
+    {
+      key: " Step 2",
+      val: "Notify your friends",
+    },
+    {
+      key: " Step 3",
+      val: "Your friends contribute to fulfilling your wishlist by eitherbuying a gift outright or adding funds towards the fulfillment of your top/preferred gift(s).",
+    },
+  ];
   return (
     <Grid item container>
       <Grid
@@ -89,19 +116,15 @@ const LandingPage = () => {
       <Grid
         item
         container
-        gap={2}
+        gap={4}
         py={4}
         sx={{ maxHeight: "37rem", px: 3, py: 4 }}
       >
-        <Grid item flex={1} sx={{ alignSelf: "flex-end", py: 3 }}>
+        <Grid item flex={1} sx={{ alignSelf: "flex-end", pb: 3, px: 6 }}>
           <Grid item>
-            <Avatar
-              src={annoucement}
-              variant="square"
-              sx={{ width: "4rem", height: "4rem", objectFit: "contain" }}
-            />{" "}
+            <CampaignOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
           </Grid>
-          <Typography my={2} variant="h3">
+          <Typography my={2} variant="h3" fontWeight={800} color={"secondary"}>
             Social Features{" "}
           </Typography>
           <Typography color="info" variant="h6">
@@ -111,9 +134,87 @@ const LandingPage = () => {
             through tantrums because you forgot a birthday.{" "}
           </Typography>
         </Grid>
-        <Grid item flex={1} sx={{ height: "100%", py: 3 }}>
+        <Grid item flex={1} sx={{ height: "100%" }}>
           <Avatar
             src={cale}
+            variant="square"
+            sx={{
+              width: "100%",
+              borderRadius: "1.3rem",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        gap={4}
+        py={4}
+        sx={{ maxHeight: "37rem", px: 3, py: 4 }}
+      >
+        <Grid item flex={1} sx={{ height: "100%", px: 6 }}>
+          <Avatar
+            src={home02}
+            variant="square"
+            sx={{
+              width: "100%",
+              borderRadius: "1.3rem",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Grid>
+        <Grid item flex={1} sx={{ alignSelf: "flex-end", pb: 3 }}>
+          <Grid item>
+            <ShoppingCartOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+          </Grid>
+          <Typography my={2} variant="h3" fontWeight={800} color={"secondary"}>
+            Wishlist & Marketplace Features
+          </Typography>
+          <Typography color="info" variant="h6">
+            As you create your Birthday Wishlist, choose from a wide selection
+            of amazing gifts from local and international vendors in our
+            Marketplace. Once fulfilled, your birthday gifts will be delivered
+            straight to your doorstep absolutely for free.{" "}
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        gap={4}
+        py={4}
+        sx={{ maxHeight: "37rem", px: 3, py: 4 }}
+      >
+        <Grid item flex={1} sx={{ alignSelf: "flex-end", pb: 3 }}>
+          <Grid item>
+            <WalletOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+          </Grid>
+          <Typography my={2} variant="h3" fontWeight={800} color={"secondary"}>
+            Wallet & Crowdfunding Features
+          </Typography>
+          <List>
+            {arr.map((ite) => (
+              <ListItem key={ite.key}>
+                <ListItemText
+                  primary={
+                    <Typography variant="h4" fontWeight={700} color={"info"}>
+                      {ite.key}:
+                      <Typography variant="spa" fontWeight={400}>
+                        {ite.val}
+                      </Typography>
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Grid>
+        <Grid item flex={1} sx={{ height: "100%", px: 6 }}>
+          <Avatar
+            src={home03}
             variant="square"
             sx={{
               width: "100%",
