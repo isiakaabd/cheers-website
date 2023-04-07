@@ -1,6 +1,7 @@
 import { useTheme } from "@emotion/react";
 import {
   Avatar,
+  Button,
   Grid,
   List,
   ListItem,
@@ -8,7 +9,17 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { annoucement, cale, home01, home02, home03 } from "../assets";
+import {
+  annoucement,
+  appstore,
+  cale,
+  googleplay,
+  home01,
+  home02,
+  home03,
+  home04,
+  home09,
+} from "../assets";
 import {
   AnnouncementOutlined,
   CampaignOutlined,
@@ -16,6 +27,9 @@ import {
   ShoppingCartOutlined,
   WalletOutlined,
 } from "@mui/icons-material";
+import { Form, Formik } from "formik/dist";
+import FormikControl from "../validation/FormikControl";
+import Accordions from "./components/Accordions";
 
 const LandingPage = () => {
   const theme = useTheme();
@@ -34,7 +48,7 @@ const LandingPage = () => {
     },
   ];
   return (
-    <Grid item container>
+    <Grid item container sx={{ height: "100%" }}>
       <Grid
         item
         container
@@ -82,147 +96,355 @@ const LandingPage = () => {
           />
         </Grid>
       </Grid>
-      <Grid
-        item
-        container
-        py={4}
-        justifyContent={"center"}
-        sx={{ maxWidth: "90%", mx: "auto" }}
-      >
-        <Grid item>
-          <Typography
-            textAlign={"center"}
-            gutterBottom
-            variant="h2"
-            color={"secondary"}
-          >
-            Elevate your{" "}
-            <Typography variant="span" color={"primary"}>
-              birthday experience
-            </Typography>{" "}
-          </Typography>
-          <Typography
-            textAlign={"center"}
-            gutterBottom
-            color="info"
-            variant="h4"
-          >
-            By using CHEERS, our exciting features will help you experience
-            birthdays as they are truly meant to be filled with love,
-            thoughtfulness and fun. Here are some of CHEERS awesome feature.
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid
-        item
-        container
-        gap={4}
-        py={4}
-        sx={{ maxHeight: "37rem", px: 3, py: 4 }}
-      >
-        <Grid item flex={1} sx={{ alignSelf: "flex-end", pb: 3, px: 6 }}>
+
+      <Grid item container px={{ md: 6, xs: 1 }}>
+        <Grid
+          item
+          container
+          py={4}
+          justifyContent={"center"}
+          sx={{ maxWidth: { md: "90%", xs: "100%" }, mx: "auto" }}
+        >
           <Grid item>
-            <CampaignOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+            <Typography
+              textAlign={"center"}
+              gutterBottom
+              variant="h2"
+              color={"secondary"}
+            >
+              Elevate your{" "}
+              <Typography variant="span" color={"primary"}>
+                birthday experience
+              </Typography>{" "}
+            </Typography>
+            <Typography
+              textAlign={{ xs: "justify" }}
+              gutterBottom
+              color="info"
+              variant="h4"
+            >
+              By using CHEERS, our exciting features will help you experience
+              birthdays as they are truly meant to be filled with love,
+              thoughtfulness and fun. Here are some of CHEERS awesome feature.
+            </Typography>
           </Grid>
-          <Typography my={2} variant="h3" fontWeight={800} color={"secondary"}>
-            Social Features{" "}
-          </Typography>
-          <Typography color="info" variant="h6">
-            With great features like birthday reminders, status updates &
-            messaging. CHEERS will save you the stress of checking the calendar
-            every other day, the trouble of sending apology notes and sitting
-            through tantrums because you forgot a birthday.{" "}
-          </Typography>
         </Grid>
-        <Grid item flex={1} sx={{ height: "100%" }}>
-          <Avatar
-            src={cale}
-            variant="square"
-            sx={{
-              width: "100%",
-              borderRadius: "1.3rem",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
-        </Grid>
-      </Grid>
-      <Grid
-        item
-        container
-        gap={4}
-        py={4}
-        sx={{ maxHeight: "37rem", px: 3, py: 4 }}
-      >
-        <Grid item flex={1} sx={{ height: "100%", px: 6 }}>
-          <Avatar
-            src={home02}
-            variant="square"
-            sx={{
-              width: "100%",
-              borderRadius: "1.3rem",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
-        </Grid>
-        <Grid item flex={1} sx={{ alignSelf: "flex-end", pb: 3 }}>
-          <Grid item>
-            <ShoppingCartOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+        <Grid
+          item
+          container
+          gap={4}
+          py={4}
+          flexDirection={{ xs: "column", sm: "row" }}
+        >
+          <Grid item flex={{ md: 1, xs: 2 }} sx={{ alignSelf: "center" }}>
+            <Grid item>
+              <CampaignOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+            </Grid>
+            <Typography
+              my={2}
+              variant="h3"
+              fontWeight={800}
+              color={"secondary"}
+            >
+              Social Features{" "}
+            </Typography>
+            <Typography color="info" variant="h6" textAlign={{ xs: "justify" }}>
+              With great features like birthday reminders, status updates &
+              messaging. CHEERS will save you the stress of checking the
+              calendar every other day, the trouble of sending apology notes and
+              sitting through tantrums because you forgot a birthday.{" "}
+            </Typography>
           </Grid>
-          <Typography my={2} variant="h3" fontWeight={800} color={"secondary"}>
-            Wishlist & Marketplace Features
-          </Typography>
-          <Typography color="info" variant="h6">
-            As you create your Birthday Wishlist, choose from a wide selection
-            of amazing gifts from local and international vendors in our
-            Marketplace. Once fulfilled, your birthday gifts will be delivered
-            straight to your doorstep absolutely for free.{" "}
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid
-        item
-        container
-        gap={4}
-        py={4}
-        sx={{ maxHeight: "37rem", px: 3, py: 4 }}
-      >
-        <Grid item flex={1} sx={{ alignSelf: "flex-end", pb: 3 }}>
-          <Grid item>
-            <WalletOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+          <Grid item flex={1} sx={{ maxHeight: "30rem" }}>
+            <Avatar
+              src={cale}
+              variant="square"
+              sx={{
+                width: "100%",
+                borderRadius: "1.3rem",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </Grid>
-          <Typography my={2} variant="h3" fontWeight={800} color={"secondary"}>
-            Wallet & Crowdfunding Features
-          </Typography>
-          <List>
-            {arr.map((ite) => (
-              <ListItem key={ite.key}>
-                <ListItemText
-                  primary={
-                    <Typography variant="h4" fontWeight={700} color={"info"}>
-                      {ite.key}:
-                      <Typography variant="spa" fontWeight={400}>
-                        {ite.val}
+        </Grid>
+        <Grid
+          item
+          container
+          gap={4}
+          py={4}
+          flexDirection={{ xs: "column", sm: "row" }}
+        >
+          <Grid item flex={1} sx={{ maxHeight: "30rem" }}>
+            <Avatar
+              src={home02}
+              variant="square"
+              sx={{
+                width: "100%",
+                borderRadius: "1.3rem",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
+          </Grid>
+          <Grid item flex={{ md: 1, xs: 2 }} sx={{ alignSelf: "center" }}>
+            <Grid item>
+              <ShoppingCartOutlined
+                sx={{ fontSize: "4rem", fill: "#E20489" }}
+              />
+            </Grid>
+            <Typography
+              my={2}
+              variant="h3"
+              fontWeight={800}
+              color={"secondary"}
+            >
+              Wishlist & Marketplace Features
+            </Typography>
+            <Typography color="info" variant="h6" textAlign={{ xs: "justify" }}>
+              As you create your Birthday Wishlist, choose from a wide selection
+              of amazing gifts from local and international vendors in our
+              Marketplace. Once fulfilled, your birthday gifts will be delivered
+              straight to your doorstep absolutely for free.{" "}
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          container
+          gap={4}
+          py={4}
+          flexDirection={{ md: "row", xs: "column" }}
+        >
+          <Grid item flex={{ sm: 2, md: 1 }} sx={{ alignSelf: "center" }}>
+            <Grid item>
+              <WalletOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+            </Grid>
+            <Typography
+              my={2}
+              variant="h3"
+              fontWeight={800}
+              color={"secondary"}
+            >
+              Wallet & Crowdfunding Features
+            </Typography>
+            <List dense>
+              {arr.map((ite) => (
+                <ListItem key={ite.key} dense disableGutters disablePadding>
+                  <ListItemText
+                    primaryTypographyProps={{ textAlign: "justify" }}
+                    primary={
+                      <Typography
+                        variant="h6"
+                        fontWeight={700}
+                        color={"info"}
+                        textAlign="justify"
+                      >
+                        {ite.key}:
+                        <Typography variant="span" fontWeight={400}>
+                          {ite.val}
+                        </Typography>
                       </Typography>
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
-          </List>
+                    }
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Grid>
+          <Grid item flex={1} sx={{ maxHeight: "30rem" }}>
+            <Avatar
+              src={home03}
+              variant="square"
+              sx={{
+                width: "100%",
+                borderRadius: "1.3rem",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
+          </Grid>
         </Grid>
-        <Grid item flex={1} sx={{ height: "100%", px: 6 }}>
-          <Avatar
-            src={home03}
-            variant="square"
-            sx={{
-              width: "100%",
-              borderRadius: "1.3rem",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
+
+        <Grid
+          px={3}
+          py={5}
+          item
+          sx={{
+            background: ` url(${home04}) #6A1347`,
+            backgroundBlendMode: "hue",
+            borderRadius: "1.5rem",
+            color: "#fff",
+          }}
+        >
+          <Grid item container py={3}>
+            <Typography variant="h2" textAlign={"center"} mb={3} width="100%">
+              Let’s get started
+            </Typography>
+            <Grid item sx={{ maxWidth: { md: "90%" }, mx: "auto" }}>
+              <Typography variant="h5" textAlign={"center"} width="100%">
+                CHEERS Official launch is around the corner. By signing up to
+                test the App during our BETA Stage, you’ll provide direct
+                feedback to the CHEERS team then stand a chance to win unique
+                privileges and receive exclusive gifts from the CHEERS team on
+                YOUR special day.
+              </Typography>
+            </Grid>
+          </Grid>
+
+          {/* swipeale */}
+          <Grid item container></Grid>
+          <Grid
+            item
+            alignItems={"center"}
+            container
+            justifyContent={"center"}
+            gap={4}
+          >
+            <Typography variant="h2" fontWeight={800}>
+              COMING SOON...
+            </Typography>
+            <Grid item>
+              <Avatar
+                variant="square"
+                src={googleplay}
+                alt="googleplay"
+                sx={{ width: "20rem", height: "100%" }}
+              />
+            </Grid>
+            <Grid item>
+              <Avatar
+                variant="square"
+                src={appstore}
+                alt={"appstore"}
+                sx={{ width: "20rem", height: "100%" }}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid item container mt={4} gap={4}>
+          <Grid item flex={1}>
+            <Avatar
+              src={home09}
+              variant="square"
+              sx={{
+                width: "100%",
+                borderRadius: "1.3rem",
+                height: "100%",
+                maxHeight: "40rem",
+              }}
+            />
+          </Grid>
+          <Grid item flex={{ md: 1, sm: 2 }}>
+            <Grid
+              item
+              container
+              flexDirection={"column"}
+              alignItems={"space-between"}
+              sx={{ height: "100%" }}
+            >
+              <Typography variant="h5" my={2}>
+                Get started and enjoy your birthday just the way you want it to
+                be full of love, fun & excitement!!!{" "}
+                <Typography variant="span" color={"error"}>
+                  CHEERS
+                </Typography>{" "}
+                will make it happen.
+              </Typography>
+              <Grid item sx={{ flex: 1 }}>
+                <Formik
+                  initialValues={{ name: "", email: "", checkbox: false }}
+                >
+                  <Form style={{ height: "100%" }}>
+                    <Grid item container sx={{ height: "100%" }}>
+                      <Grid item container gap={2}>
+                        <Grid item container>
+                          <FormikControl name="name" placeholder="Enter Name" />
+                        </Grid>
+                        <Grid item container>
+                          <FormikControl
+                            name="email"
+                            placeholder="Enter Valid Email"
+                          />
+                        </Grid>
+                        <Grid
+                          item
+                          container
+                          flexWrap={"nowrap"}
+                          alignItems={"center"}
+                        >
+                          <Grid item>
+                            <FormikControl name="checkbox" control="checkbox" />
+                          </Grid>
+                          <Typography variant="h5" noWrap fontWeight={400}>
+                            I have read and agreed to the{" "}
+                            <Typography variant="span" color={"error"}>
+                              terms and conditions
+                            </Typography>
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                      <Grid item mt="auto" sx={{ width: "100%" }}>
+                        <Button
+                          variant="contained"
+                          sx={{
+                            fontWeight: 700,
+                            width: "100%",
+                            textTransform: "initial",
+                            fontSize: "clamp(1.4rem,8vw,2rem)",
+                          }}
+                        >
+                          SUBSCRIBE TO NEWSLETTER
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Form>
+                </Formik>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/*  */}
+        <Grid item container>
+          <Grid item>
+            <Typography>
+              Explore our
+              <Typography color={"error"} variant="span">
+                frequently asked questions (FAQ)
+              </Typography>
+            </Typography>
+            <Typography>
+              If others are asking, then you're probably thinking the same
+              thing. Here are some answers that would help.
+            </Typography>
+          </Grid>
+          <Grid item container>
+            <Accordions
+              arr={[
+                {
+                  topic: "What does Cheers do?",
+                  summary:
+                    "    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.    Aliquam eget maximus est, id dignissim quam.",
+                },
+                {
+                  topic: "What does Cheers do?",
+                  summary:
+                    "    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.    Aliquam eget maximus est, id dignissim quam.",
+                },
+                {
+                  topic: "What does Cheers do?",
+                  summary:
+                    "    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.    Aliquam eget maximus est, id dignissim quam.",
+                },
+                {
+                  topic: "What does Cheers do?",
+                  summary:
+                    "    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.    Aliquam eget maximus est, id dignissim quam.",
+                },
+              ]}
+            />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

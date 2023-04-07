@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 const fuciaPink = "#E20489";
+const main = "#6A1347";
 const lightFuciaPink = "#FFB9EB";
 const dark = "#5A5959";
 const lightGrey = "#8A8A8A";
@@ -16,14 +17,14 @@ export const muiTheme = createTheme({
       lightFuciaPink,
     },
     primary: {
-      main: fuciaPink,
+      main,
     },
     // secondary: {
     //   main: grey,
     // },
-    // error: {
-    //   main: red,
-    // },
+    error: {
+      main: fuciaPink,
+    },
 
     secondary: {
       main: dark,
@@ -65,6 +66,10 @@ export const muiTheme = createTheme({
     },
     h5: {
       fontSize: "clamp(1.4rem,2vw,1.85rem)",
+      fontWeight: 500,
+    },
+    h6: {
+      fontSize: "clamp(1.9rem,2vw,2.2rem)",
       fontWeight: 500,
     },
 

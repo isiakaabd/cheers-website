@@ -14,17 +14,7 @@ const AppRoutes = () => {
         <div className="container">
           <Routes>
             <Route element={<App />}>
-              {/* {loginStatus ? ( */}
-              <>
-                <Route path="/*" element={<PrivateRoutes />} />
-                {/* <Route index element={<Navigate to="/dashboard" />} /> */}
-              </>
-              {/* // ) : (
-              //   <>
-              //     <Route path="auth/*" element={<AuthPage />} />
-              //     <Route path="*" element={<Navigate to="/auth" />} />
-              //   </>
-              // )} */}
+              <Route path="/*" element={<PrivateRoutes />} />
             </Route>
           </Routes>
         </div>

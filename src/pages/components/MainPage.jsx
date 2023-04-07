@@ -4,21 +4,12 @@ import { Outlet } from "react-router-dom";
 
 const MainPage = () => {
   return (
-    <Grid
-      item
-      container
-      flexDirection={"column"}
-      sx={{ minHeight: "100vh", height: "100%" }}
-    >
+    <Grid item sx={{ height: "100%" }}>
       <Header />
-      <Grid item sx={{ my: "auto", pb: 4 }}>
-        <Toolbar>
-          <Outlet />
-        </Toolbar>
+      <Grid item container sx={{ pb: 4, px: 2, height: "100%" }}>
+        <Outlet />
       </Grid>
-      <Toolbar />
-      <Toolbar />
-      <Toolbar />
+
       <Footer />
     </Grid>
   );

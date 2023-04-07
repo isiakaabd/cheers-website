@@ -85,6 +85,7 @@ export default function BottomAppBar() {
 
       <AppBar
         position="relative"
+        component={"footer"}
         sx={{
           top: "auto",
           background: theme.palette.common.deepRed,
