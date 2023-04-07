@@ -54,9 +54,9 @@ function Header() {
       item
       container
       sx={{
-        minHeight: "100vh",
         position: "relative",
         minHeight: "100dvh",
+        minHeight: "100vh",
         background: `url(${bg}) center no-repeat`,
       }}
     >

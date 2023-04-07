@@ -8,7 +8,7 @@ const Switchs = ({ label, name, size, value, ...rest }) => {
       control={
         <Checkbox
           size={size ? size : "large"}
-          sx={{ m: label ? 1 : 0 }}
+          sx={{ mr: label ? 1 : 0 }}
           name={name}
           {...rest}
         />

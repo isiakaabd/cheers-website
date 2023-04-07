@@ -16,7 +16,10 @@ export default function Accordions({ arr }) {
       item
       container
       gap={2}
-      sx={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
+      sx={{
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+      }}
     >
       {arr.map((item, idx) => (
         <Grid item>
@@ -52,7 +55,9 @@ function Accord({ item }) {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>{item.topic}</Typography>
+        <Typography variant="h5" color={"#969595"}>
+          {item.topic}
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>{item.summary} </Typography>

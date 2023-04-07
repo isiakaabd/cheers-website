@@ -10,6 +10,7 @@ import home04 from "./images/home04.png";
 import home05 from "./images/home05.png";
 import home06 from "./images/home06.png";
 import home09 from "./images/home09.png";
+import home10 from "./images/home10.png";
 import appstore from "./images/appstore.png";
 import googleplay from "./images/googleplay.png";
 export {
@@ -21,6 +22,7 @@ export {
   home05,
   home03,
   home09,
+  home10,
   home04,
   annoucement,
   googleplay,

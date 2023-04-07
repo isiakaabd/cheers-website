@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import {
-  annoucement,
   appstore,
   cale,
   googleplay,
@@ -19,11 +18,11 @@ import {
   home03,
   home04,
   home09,
+  home10,
 } from "../assets";
 import {
-  AnnouncementOutlined,
+  ArrowForward,
   CampaignOutlined,
-  ShoppingCart,
   ShoppingCartOutlined,
   WalletOutlined,
 } from "@mui/icons-material";
@@ -214,7 +213,7 @@ const LandingPage = () => {
           container
           gap={4}
           py={4}
-          flexDirection={{ md: "row", xs: "column" }}
+          flexDirection={{ sm: "row", xs: "column" }}
         >
           <Grid item flex={{ sm: 2, md: 1 }} sx={{ alignSelf: "center" }}>
             <Grid item>
@@ -275,6 +274,7 @@ const LandingPage = () => {
             borderRadius: "1.5rem",
             color: "#fff",
           }}
+          container
         >
           <Grid item container py={3}>
             <Typography variant="h2" textAlign={"center"} mb={3} width="100%">
@@ -322,7 +322,13 @@ const LandingPage = () => {
           </Grid>
         </Grid>
 
-        <Grid item container mt={4} gap={4}>
+        <Grid
+          item
+          container
+          flexDirection={{ xs: "column", sm: "row" }}
+          mt={4}
+          gap={4}
+        >
           <Grid item flex={1}>
             <Avatar
               src={home09}
@@ -351,11 +357,11 @@ const LandingPage = () => {
                 </Typography>{" "}
                 will make it happen.
               </Typography>
-              <Grid item sx={{ flex: 1 }}>
+              <Grid item sx={{ width: "100%" }}>
                 <Formik
                   initialValues={{ name: "", email: "", checkbox: false }}
                 >
-                  <Form style={{ height: "100%" }}>
+                  <Form style={{ height: "100%", width: "100%" }}>
                     <Grid item container sx={{ height: "100%" }}>
                       <Grid item container gap={2}>
                         <Grid item container>
@@ -373,15 +379,19 @@ const LandingPage = () => {
                           flexWrap={"nowrap"}
                           alignItems={"center"}
                         >
-                          <Grid item>
-                            <FormikControl name="checkbox" control="checkbox" />
+                          <Grid item container>
+                            <FormikControl
+                              name="checkbox"
+                              control="checkbox"
+                              label=" I have read and agreed to the terms and conditions"
+                            />
                           </Grid>
-                          <Typography variant="h5" noWrap fontWeight={400}>
+                          {/* <Typography variant="h5" noWrap fontWeight={400}>
                             I have read and agreed to the{" "}
                             <Typography variant="span" color={"error"}>
-                              terms and conditions
+                              
                             </Typography>
-                          </Typography>
+                          </Typography> */}
                         </Grid>
                       </Grid>
                       <Grid item mt="auto" sx={{ width: "100%" }}>
@@ -406,15 +416,23 @@ const LandingPage = () => {
         </Grid>
 
         {/*  */}
-        <Grid item container>
-          <Grid item>
-            <Typography>
-              Explore our
+        <Grid
+          item
+          container
+          flexDirection={"column"}
+          alignItems={"center"}
+          py={4}
+          px={2}
+          sx={{ bgcolor: "rgba(255, 185, 235, 0.45)", mt: 4 }}
+        >
+          <Grid item sx={{ width: "100%" }}>
+            <Typography variant="h2" textAlign={"center"}>
+              Explore our{" "}
               <Typography color={"error"} variant="span">
                 frequently asked questions (FAQ)
               </Typography>
             </Typography>
-            <Typography>
+            <Typography variant="h5" my={2} textAlign={"center"}>
               If others are asking, then you're probably thinking the same
               thing. Here are some answers that would help.
             </Typography>
@@ -443,6 +461,69 @@ const LandingPage = () => {
                     "    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.    Aliquam eget maximus est, id dignissim quam.",
                 },
               ]}
+            />
+            <Grid item container justifyContent={"center"} mt={2}>
+              <Grid item>
+                <Button
+                  disableElevation
+                  endIcon={<ArrowForward />}
+                  variant="contained"
+                  sx={{
+                    background: "#fff",
+                    color: "#8A8A8A",
+                    fontWeight: 700,
+                    width: "100%",
+                    textTransform: "initial",
+                    fontSize: "clamp(1.4rem,8vw,2rem)",
+                  }}
+                >
+                  View More
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        {/*  */}
+        <Grid item container mt={4} flexDirection={{ xs: "column", sm: "row" }}>
+          <Grid item flex={1}>
+            <Grid item container>
+              <Typography variant="h2">
+                Would you like to be a CHEERS{" "}
+                <Typography variant="span" color={"error"}>
+                  Vendor, Affiliate or Logistics Partner?
+                </Typography>
+              </Typography>
+              <Typography color={"#8A8A8A"} variant="h5" my={4}>
+                At CHEERS, we operate a seamless end-to-end process based on
+                efficiency, accountability and service. Send us an email to get
+                in touch with us or subscribe to our newsletter/blog to be
+                updated on our pre-launch/post-launch activity.
+              </Typography>
+              <Grid item>
+                <Button
+                  disableElevation
+                  variant="contained"
+                  sx={{
+                    fontWeight: 700,
+                    width: "100%",
+                    textTransform: "initial",
+                    fontSize: "clamp(1.4rem,8vw,2rem)",
+                  }}
+                >
+                  Get Started
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item flex={1} sx={{ maxHeight: "35rem" }}>
+            <Avatar
+              src={home10}
+              variant="square"
+              sx={{
+                width: "100%",
+                "& img": { objectFit: "contain" },
+                height: "100%",
+              }}
             />
           </Grid>
         </Grid>
