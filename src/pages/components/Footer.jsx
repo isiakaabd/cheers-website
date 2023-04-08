@@ -14,16 +14,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import Avatar from "@mui/material/Avatar";
-import {
-  WhatsappShareButton,
-  WhatsappIcon,
-  TwitterShareButton,
-  LinkedinIcon,
-  LinkedinShareButton,
-  TwitterIcon,
-  FacebookIcon,
-  FacebookShareButton,
-} from "react-share";
+
 import { Grid, ListItemButton, ListItemIcon } from "@mui/material";
 import { logo, testimonial } from "../../assets";
 import {
@@ -35,26 +26,8 @@ import {
 } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
+import Socials from "./Socials";
 
-const socialItems = [
-  {
-    Icon: FacebookIcon,
-    Button: FacebookShareButton,
-  },
-  {
-    Button: LinkedinShareButton,
-    Icon: LinkedinIcon,
-  },
-  {
-    // }&text=${encodeURI("Here is a post on " + data?.title)}`,
-    Icon: TwitterIcon,
-    Button: TwitterShareButton,
-  },
-  {
-    Icon: WhatsappIcon,
-    Button: WhatsappShareButton,
-  },
-];
 const options = [
   {
     name: "Contact Us",
@@ -127,20 +100,7 @@ export default function BottomAppBar() {
                     day. It’s a chance to show people how much they mean to you
                     and how much you care.
                   </Typography>
-                  <Grid
-                    item
-                    container
-                    justifyContent="space-between"
-                    // alignItems="center"
-                  >
-                    {socialItems.map((social, index) => (
-                      // <ListItem disableGutters key={index}>
-                      <social.Button url={"#"} quote={"#"}>
-                         <social.Icon size={32} round />
-                      </social.Button>
-                      // </ListItemButton>
-                    ))}
-                  </Grid>
+                  <Socials />
                 </Grid>
               </Grid>
               <Grid item>

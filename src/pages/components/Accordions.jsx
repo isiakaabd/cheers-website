@@ -22,8 +22,8 @@ export default function Accordions({ arr }) {
       }}
     >
       {arr.map((item, idx) => (
-        <Grid item>
-          <Accord key={idx} item={item} />
+        <Grid item key={idx}>
+          <Accord item={item} />
         </Grid>
       ))}
     </Grid>

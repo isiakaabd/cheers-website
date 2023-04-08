@@ -13,6 +13,8 @@ import home09 from "./images/home09.png";
 import home10 from "./images/home10.png";
 import appstore from "./images/appstore.png";
 import googleplay from "./images/googleplay.png";
+import QuestionIcon from "./svgs/Question";
+import Question2Icon from "./svgs/Question2";
 export {
   logo,
   home01,
@@ -24,9 +26,11 @@ export {
   home09,
   home10,
   home04,
+  Question2Icon,
   annoucement,
   googleplay,
   cale,
   testimonial,
   appstore,
+  QuestionIcon,
 };

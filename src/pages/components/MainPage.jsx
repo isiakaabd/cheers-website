@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <Grid item sx={{ height: "100%" }}>
       <Header />
-      <Grid item container sx={{ pb: 4, px: 2, height: "100%" }}>
+      <Grid item container sx={{ px: 2, height: "100%" }}>
         <Outlet />
       </Grid>
 

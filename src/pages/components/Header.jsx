@@ -120,6 +120,7 @@ function Header() {
                   key={page.route}
                   onClick={handleCloseNavMenu}
                   variant={page.route === "vendor" && "contained"}
+                  color="error"
                   // component="h3"
                   sx={{
                     my: 2,
