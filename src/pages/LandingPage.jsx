@@ -29,6 +29,7 @@ import {
 import { Form, Formik } from "formik/dist";
 import FormikControl from "../validation/FormikControl";
 import Accordions from "./components/Accordions";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const theme = useTheme();
@@ -341,7 +342,7 @@ const LandingPage = () => {
               }}
             />
           </Grid>
-          <Grid item flex={{ md: 1, sm: 2 }}>
+          <Grid item flex={{ md: 1, sm: 2 }} id="day">
             <Grid
               item
               container
@@ -357,7 +358,7 @@ const LandingPage = () => {
                 </Typography>{" "}
                 will make it happen.
               </Typography>
-              <Grid item sx={{ width: "100%" }}>
+              <Grid item flex={1} sx={{ width: "100%" }}>
                 <Formik
                   initialValues={{ name: "", email: "", checkbox: false }}
                 >
@@ -468,6 +469,8 @@ const LandingPage = () => {
                   disableElevation
                   endIcon={<ArrowForward />}
                   variant="contained"
+                  component={Link}
+                  to="/faq"
                   sx={{
                     background: "#fff",
                     color: "#8A8A8A",

@@ -14,19 +14,20 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { bg, logo } from "../../assets";
 import { Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const pages = [
   {
     name: "Home",
-    route: "home",
+    route: "/",
   },
   {
     name: "Testimonials",
-    route: "testimonials",
+    route: "/gallery",
   },
   {
     name: "Vendor",
-    route: "vendor",
+    route: "/service",
   },
 ];
 
@@ -68,6 +69,8 @@ function Header() {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Avatar
+              component={Link}
+              to="/"
               src={logo}
               sx={{
                 width: { sm: "10rem" },
@@ -118,7 +121,9 @@ function Header() {
               {pages.map((page) => (
                 <Button
                   key={page.route}
-                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  to={page.route}
+                  // onClick={handleCloseNavMenu}
                   variant={page.route === "vendor" && "contained"}
                   color="error"
                   // component="h3"
@@ -150,6 +155,7 @@ function Header() {
         <Grid item mt={6}>
           <Button
             variant="contained"
+            href="#day"
             disableElevation
             sx={{ fontSize: "2.6rem", fontWeight: 700 }}
           >

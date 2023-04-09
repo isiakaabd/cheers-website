@@ -13,6 +13,12 @@ import home09 from "./images/home09.png";
 import home10 from "./images/home10.png";
 import appstore from "./images/appstore.png";
 import googleplay from "./images/googleplay.png";
+import service01 from "./images/service01.png";
+import service02 from "./images/service02.png";
+import service03 from "./images/service03.png";
+import service04 from "./images/service04.png";
+import service05 from "./images/service05.png";
+import service06 from "./images/service06.png";
 import QuestionIcon from "./svgs/Question";
 import Question2Icon from "./svgs/Question2";
 export {
@@ -20,6 +26,12 @@ export {
   home01,
   bg,
   home02,
+  service01,
+  service02,
+  service03,
+  service04,
+  service05,
+  service06,
   home06,
   home05,
   home03,

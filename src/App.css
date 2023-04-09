@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -12,6 +13,7 @@ body {
   font-family: "Raleway", "sans-serif", "Roboto" !important;
   scroll-behavior: smooth;
   width: 100%;
+  scroll-padding-top: 3rem;
 }
 .container {
   width: 100%;

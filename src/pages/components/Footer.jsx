@@ -1,21 +1,24 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import Paper from "@mui/material/Paper";
-import Fab from "@mui/material/Fab";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader";
-import Avatar from "@mui/material/Avatar";
+import {
+  AppBar,
+  Grid,
+  styled,
+  ListItemButton,
+  ListItemIcon,
+  List,
+  ListSubheader,
+  Avatar,
+  ListItemText,
+  ListItemAvatar,
+  ListItem,
+  Box,
+  CssBaseline,
+  Paper,
+  Fab,
+  Toolbar,
+  Typography,
+  IconButton,
+} from "@mui/material";
 
-import { Grid, ListItemButton, ListItemIcon } from "@mui/material";
 import { logo, testimonial } from "../../assets";
 import {
   LocalActivity,
@@ -27,11 +30,12 @@ import {
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 import Socials from "./Socials";
+import { Fragment } from "react";
 
 const options = [
   {
     name: "Contact Us",
-    link: "/contact-us",
+    link: "/contact",
   },
   {
     name: "FAQ",
@@ -39,11 +43,11 @@ const options = [
   },
   {
     name: "Services",
-    link: "/services",
+    link: "/service",
   },
   {
     name: "Become a CHEERS VENDOR",
-    link: "/become-a-cheers-vendor",
+    link: "/service",
   },
 ];
 const text = {
@@ -52,8 +56,9 @@ const text = {
 };
 export default function BottomAppBar() {
   const theme = useTheme();
+
   return (
-    <React.Fragment>
+    <Fragment>
       <CssBaseline />
 
       <AppBar
@@ -136,10 +141,23 @@ export default function BottomAppBar() {
                   Quick Links
                 </Typography>
 
-                <List dense sx={{ py: 4 }}>
+                <List dense sx={{ py: 4 }} disablePadding>
                   {options.map((item, idx) => (
-                    <ListItemButton component={"a"} to="#">
-                      <ListItem key={idx} disableGutters dense>
+                    <ListItemButton
+                      dense
+                      component={Link}
+                      to={item.link}
+                      disableGutters
+                      disableTouchRipple
+                      disableRipple
+                      sx={{
+                        textDecoration: "underline",
+                        textDecorationColor: "#E20489",
+                        textDecorationThickness: "2px",
+                        textUnderlineOffset: ".5rem",
+                      }}
+                    >
+                      <ListItem key={idx} disableGutters dense disablePadding>
                         <ListItemText
                           primary={item.name}
                           primaryTypographyProps={{
@@ -221,6 +239,6 @@ export default function BottomAppBar() {
           </Grid>
         </Toolbar>
       </AppBar>
-    </React.Fragment>
+    </Fragment>
   );
 }
