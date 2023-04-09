@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,9 +11,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { bg, logo } from "../../assets";
+import { bg, logo, bg01, bg06, bg03, bg02 } from "../../assets";
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useLayoutEffect } from "react";
 
 const pages = [
   {
@@ -30,24 +30,65 @@ const pages = [
     route: "/service",
   },
 ];
+const pagesAcc = [
+  {
+    text: "Frequently Asked Question (FAQ)",
+    subText:
+      "If others are asking, then you're probably thinking the same thing. Here are some answers that would help.",
+    route: "/faq",
+    image: bg03,
+  },
+  {
+    text: "Make all your Birthday wishes come true",
+    subText: null,
+    route: "/",
+    image: bg06,
+  },
+  {
+    text: "Talk to us, we are here 24/7 ",
+    subText:
+      "Providing an exciting new way to be the center of attention as you celebrate your special day is personal for us, so we’d love to hear from you.",
+    route: "/contact",
+    image: bg,
+  },
+  {
+    text: "What we do",
+    subText: null,
+    route: "/service",
+    image: bg02,
+  },
+  {
+    text: "Events Gallery",
+    subText: null,
+    route: "/gallery",
+    image: bg01,
+  },
+];
 
 function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [active, setActive] = useState({
+    text: "Make all your Birthday wishes come true",
+    subText: null,
+    route: "/",
+    image: bg06,
+  });
+  const location = useLocation();
+  console.log(active.route === location.pathname);
+  console.log(location.pathname);
+  useLayoutEffect(() => {
+    pagesAcc.map((page) =>
+      page.route === location.pathname ? setActive(page) : null
+    );
+  }, [location.pathname]);
+
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -58,7 +99,11 @@ function Header() {
         position: "relative",
         minHeight: "100dvh",
         minHeight: "100vh",
-        background: `url(${bg}) center no-repeat`,
+        background: `#E20489 url(${active.image}) center no-repeat `,
+        backgroundSize: "cover",
+
+        // backgroundAttachment: "fixed",
+        backgroundOrigin: "content-box",
       }}
     >
       <AppBar
@@ -124,12 +169,14 @@ function Header() {
                   component={Link}
                   to={page.route}
                   // onClick={handleCloseNavMenu}
-                  variant={page.route === "vendor" && "contained"}
+                  variant={page.name === "Vendor" && "contained"}
                   color="error"
                   // component="h3"
                   sx={{
                     my: 2,
                     color: "white",
+                    // bgcolor:
+                    // page.route === "vendor" ? "#E20489" : "transparent",
                     fontSize: { xs: "1.4rem", sm: "1.6rem", md: "1.9rem" },
                     display: "block",
                     fontWeight: 700,
@@ -146,16 +193,22 @@ function Header() {
         item
         container
         flexDirection={"column"}
-        sx={{ maxWidth: { md: "50%", xs: "80vw" }, mx: "auto" }}
+        sx={{ maxWidth: { md: "70%", xs: "80vw" }, mx: "auto" }}
         alignItems={"center"}
       >
-        <Typography variant="h1" textAlign={"center"}>
-          Make all your Birthday wishes come true
+        <Typography variant="h1" textAlign={"center"} gutterBottom>
+          {active.text}{" "}
         </Typography>
+        {active.subText && (
+          <Typography variant="h5" textAlign={"center"} color={"#fff"}>
+            {active.subText}
+          </Typography>
+        )}
         <Grid item mt={6}>
           <Button
             variant="contained"
             href="#day"
+            color="error"
             disableElevation
             sx={{ fontSize: "2.6rem", fontWeight: 700 }}
           >

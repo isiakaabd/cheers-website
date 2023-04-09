@@ -487,7 +487,7 @@ const LandingPage = () => {
           </Grid>
         </Grid>
         {/*  */}
-        <Grid item container mt={4} flexDirection={{ xs: "column", sm: "row" }}>
+        <Grid item container my={4} flexDirection={{ xs: "column", sm: "row" }}>
           <Grid item flex={1}>
             <Grid item container>
               <Typography variant="h2">
@@ -506,6 +506,7 @@ const LandingPage = () => {
                 <Button
                   disableElevation
                   variant="contained"
+                  color="error"
                   sx={{
                     fontWeight: 700,
                     width: "100%",

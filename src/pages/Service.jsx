@@ -62,8 +62,9 @@ const Service = () => {
         item
         container
         py="5rem"
+        px={"4rem"}
         display={"grid"}
-        gap={3}
+        gap={"3rem"}
         gridTemplateColumns={{ md: "repeat(3,1fr)", sm: "1fr 1fr", xs: "1fr" }}
       >
         {arr.map((item, idx) => (
@@ -77,7 +78,7 @@ const Service = () => {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography variant="h5" fontWeight={400}>
+              <Typography variant="h5" fontWeight={400} textAlign={"justify"}>
                 {item.text}{" "}
               </Typography>
             </Grid>

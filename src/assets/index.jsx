@@ -1,5 +1,12 @@
 import logo from "./images/logo.png";
 import bg from "./images/bg.png";
+import bg01 from "./images/bg01.png";
+import bg02 from "./images/bg02.png";
+import bg03 from "./images/bg03.png";
+import bg04 from "./images/bg04.png";
+import bg05 from "./images/bg05.png";
+import bg06 from "./images/bg06.png";
+import bg07 from "./images/bg07.png";
 import testimonial from "./images/testimonial.png";
 import home01 from "./images/home01.png";
 import cale from "./images/cale.png";
@@ -25,6 +32,13 @@ export {
   logo,
   home01,
   bg,
+  bg01,
+  bg02,
+  bg03,
+  bg04,
+  bg05,
+  bg06,
+  bg07,
   home02,
   service01,
   service02,

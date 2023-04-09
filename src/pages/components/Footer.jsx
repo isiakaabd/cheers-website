@@ -79,7 +79,7 @@ export default function BottomAppBar() {
               container
               sx={{
                 display: "grid",
-                gap: 2,
+                gap: "3rem",
                 p: { md: 2, xs: 1 },
                 gridTemplateColumns: {
                   md: "repeat(4,1fr)",
@@ -99,7 +99,12 @@ export default function BottomAppBar() {
                       mr: "auto",
                     }}
                   />
-                  <Typography gutterBottom variant="h5" sx={{ py: 4 }}>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    sx={{ py: 4 }}
+                    textAlign={"justify"}
+                  >
                     {" "}
                     With Cheers, birthdays mean a bit more than just a special
                     day. It’s a chance to show people how much they mean to you
@@ -116,7 +121,7 @@ export default function BottomAppBar() {
                   <ListItem disableGutters dense>
                     <ListItemIcon sx={{ minWidth: "4rem" }}>
                       <LocationOnOutlined
-                        color="primary"
+                        color="error"
                         sx={{ fontSize: "3rem" }}
                       />
                     </ListItemIcon>
@@ -127,7 +132,7 @@ export default function BottomAppBar() {
                   </ListItem>
                   <ListItem disableGutters dense>
                     <ListItemIcon sx={{ minWidth: "4rem" }}>
-                      <MailOutline color="primary" sx={{ fontSize: "3rem" }} />
+                      <MailOutline color="error" sx={{ fontSize: "3rem" }} />
                     </ListItemIcon>
                     <ListItemText
                       primaryTypographyProps={text}
