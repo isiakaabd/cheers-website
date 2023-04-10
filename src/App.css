@@ -20,3 +20,9 @@ body {
   min-height: 100vh;
   height: 100%;
 }
+.carousel-root {
+  width: 100%;
+}
+.carousel-slider {
+  /* height: 40rem; */
+}

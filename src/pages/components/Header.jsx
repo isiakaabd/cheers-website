@@ -111,14 +111,14 @@ function Header() {
         elevation={0}
         sx={{ height: "max-content", background: "transparent" }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ py: "1rem" }}>
           <Toolbar disableGutters>
             <Avatar
               component={Link}
               to="/"
               src={logo}
               sx={{
-                width: { sm: "10rem" },
+                width: { xs: "15rem" },
                 "& img": { objectFit: "contain" },
                 mr: "auto",
               }}
@@ -134,7 +134,7 @@ function Header() {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon />
+                <MenuIcon sx={{ fontSize: "3rem" }} />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -155,7 +155,12 @@ function Header() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page.route} onClick={handleCloseNavMenu}>
+                  <MenuItem
+                    key={page.route}
+                    onClick={handleCloseNavMenu}
+                    component={Link}
+                    to={page.route}
+                  >
                     <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 ))}
@@ -168,15 +173,12 @@ function Header() {
                   key={page.route}
                   component={Link}
                   to={page.route}
-                  // onClick={handleCloseNavMenu}
                   variant={page.name === "Vendor" && "contained"}
                   color="error"
-                  // component="h3"
                   sx={{
                     my: 2,
                     color: "white",
-                    // bgcolor:
-                    // page.route === "vendor" ? "#E20489" : "transparent",
+
                     fontSize: { xs: "1.4rem", sm: "1.6rem", md: "1.9rem" },
                     display: "block",
                     fontWeight: 700,

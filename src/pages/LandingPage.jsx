@@ -1,4 +1,6 @@
 import { useTheme } from "@emotion/react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   Avatar,
   Button,
@@ -19,11 +21,16 @@ import {
   home04,
   home09,
   home10,
+  service01,
+  service02,
+  service03,
+  service04,
 } from "../assets";
 import {
   ArrowForward,
   CampaignOutlined,
   ShoppingCartOutlined,
+  SkipPreviousOutlined,
   WalletOutlined,
 } from "@mui/icons-material";
 import { Form, Formik } from "formik/dist";
@@ -138,7 +145,9 @@ const LandingPage = () => {
         >
           <Grid item flex={{ md: 1, xs: 2 }} sx={{ alignSelf: "center" }}>
             <Grid item>
-              <CampaignOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+              <CampaignOutlined
+                sx={{ fontSize: { md: "6rem", sm: "4rem" }, fill: "#E20489" }}
+              />
             </Grid>
             <Typography
               my={2}
@@ -190,7 +199,7 @@ const LandingPage = () => {
           <Grid item flex={{ md: 1, xs: 2 }} sx={{ alignSelf: "center" }}>
             <Grid item>
               <ShoppingCartOutlined
-                sx={{ fontSize: "4rem", fill: "#E20489" }}
+                sx={{ fontSize: { xs: "4rem", md: "6rem" }, fill: "#E20489" }}
               />
             </Grid>
             <Typography
@@ -218,7 +227,9 @@ const LandingPage = () => {
         >
           <Grid item flex={{ sm: 2, md: 1 }} sx={{ alignSelf: "center" }}>
             <Grid item>
-              <WalletOutlined sx={{ fontSize: "4rem", fill: "#E20489" }} />
+              <WalletOutlined
+                sx={{ fontSize: { xs: "4rem", md: "6rem" }, fill: "#E20489" }}
+              />
             </Grid>
             <Typography
               my={2}
@@ -293,7 +304,51 @@ const LandingPage = () => {
           </Grid>
 
           {/* swipeale */}
-          <Grid item container></Grid>
+          <Grid item container my={"4rem"}>
+            <Carousel
+              infiniteLoop={true}
+              autoPlay={true}
+              showIndicators={false}
+              showThumbs={false}
+              showStatus={false}
+              dynamicHeight={false}
+              // width={"100%"}
+              // renderArrowNext={() => <SkipPreviousOutlined />}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  gap: "1rem",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <img
+                  src={service04}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={service04}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={service04}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+              </div>
+              <div>
+                <img
+                  src={service02}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+              </div>
+              <div>
+                <img
+                  src={service03}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+              </div>
+            </Carousel>
+          </Grid>
           <Grid
             item
             alignItems={"center"}
@@ -402,7 +457,7 @@ const LandingPage = () => {
                             fontWeight: 700,
                             width: "100%",
                             textTransform: "initial",
-                            fontSize: "clamp(1.4rem,8vw,2rem)",
+                            fontSize: "clamp(1.4rem,2vw,2rem)",
                           }}
                         >
                           SUBSCRIBE TO NEWSLETTER
@@ -487,7 +542,13 @@ const LandingPage = () => {
           </Grid>
         </Grid>
         {/*  */}
-        <Grid item container my={4} flexDirection={{ xs: "column", sm: "row" }}>
+        <Grid
+          item
+          container
+          my={4}
+          rowGap={4}
+          flexDirection={{ xs: "column", sm: "row" }}
+        >
           <Grid item flex={1}>
             <Grid item container>
               <Typography variant="h2">
