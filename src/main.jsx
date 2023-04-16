@@ -1,13 +1,12 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import "react-photo-view/dist/react-photo-view.css";
 import "./App.css";
 import AppRoutes from "./routes/AppRoutes";
 import { ToastContainer } from "react-toastify";
 import CssBaseline from "@mui/material/CssBaseline";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <>
     <CssBaseline />
     <AppRoutes />
     <ToastContainer
@@ -22,5 +21,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       draggable
       pauseOnHover
     />
-  </React.StrictMode>
+  </>
 );

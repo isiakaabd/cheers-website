@@ -1,20 +1,21 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import {
+  MenuItem,
+  Button,
+  Avatar,
+  Container,
+  AppBar,
+  Menu,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { bg, logo, bg01, bg06, bg03, bg02 } from "../../assets";
 import { Grid } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
-import { useState, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import Swipe from "./Swipe";
 
 const pages = [
   {
@@ -66,20 +67,7 @@ const pagesAcc = [
 ];
 
 function Header() {
-  const [active, setActive] = useState({
-    text: "Make all your Birthday wishes come true",
-    subText: null,
-    route: "/",
-    image: bg06,
-  });
-  const location = useLocation();
-  console.log(active.route === location.pathname);
-  console.log(location.pathname);
-  useLayoutEffect(() => {
-    pagesAcc.map((page) =>
-      page.route === location.pathname ? setActive(page) : null
-    );
-  }, [location.pathname]);
+  const [activeStep, setActiveStep] = useState(0);
 
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -99,13 +87,12 @@ function Header() {
         position: "relative",
         minHeight: "100dvh",
         minHeight: "100vh",
-        background: `#E20489 url(${active.image}) center no-repeat `,
+        // background: `#E20489 url(${active.image}) center no-repeat `,
         backgroundSize: "cover",
-
-        // backgroundAttachment: "fixed",
         backgroundOrigin: "content-box",
       }}
     >
+      <Swipe activeStep={activeStep} setActiveStep={setActiveStep} />
       <AppBar
         position="static"
         elevation={0}
@@ -161,7 +148,12 @@ function Header() {
                     component={Link}
                     to={page.route}
                   >
-                    <Typography textAlign="center">{page.name}</Typography>
+                    <Typography
+                      textAlign="center"
+                      sx={{ fontSize: "1.6rem", fontWeight: 500 }}
+                    >
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -195,15 +187,15 @@ function Header() {
         item
         container
         flexDirection={"column"}
-        sx={{ maxWidth: { md: "70%", xs: "80vw" }, mx: "auto" }}
+        sx={{ zIndex: 400, maxWidth: { md: "70%", xs: "80vw" }, mx: "auto" }}
         alignItems={"center"}
       >
         <Typography variant="h1" textAlign={"center"} gutterBottom>
-          {active.text}{" "}
+          {pagesAcc[activeStep].text}{" "}
         </Typography>
-        {active.subText && (
+        {pagesAcc[activeStep].subText && (
           <Typography variant="h5" textAlign={"center"} color={"#fff"}>
-            {active.subText}
+            {pagesAcc[activeStep].subText}
           </Typography>
         )}
         <Grid item mt={6}>

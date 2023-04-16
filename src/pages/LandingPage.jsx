@@ -146,7 +146,7 @@ const LandingPage = () => {
           <Grid item flex={{ md: 1, xs: 2 }} sx={{ alignSelf: "center" }}>
             <Grid item>
               <CampaignOutlined
-                sx={{ fontSize: { md: "6rem", sm: "4rem" }, fill: "#E20489" }}
+                sx={{ fontSize: { md: "6rem", xs: "4rem" }, fill: "#E20489" }}
               />
             </Grid>
             <Typography

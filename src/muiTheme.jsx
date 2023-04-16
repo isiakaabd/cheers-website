@@ -47,21 +47,21 @@ export const muiTheme = createTheme({
     fontSize: 10,
     htmlFontSize: 10,
     h1: {
-      fontSize: "clamp(3rem, 8vw, 4.5rem)",
+      fontSize: "clamp(3rem, 2vw, 4.5rem)",
       fontWeight: 800,
       color: "#fff",
       // lineHeight: "3rem",
     },
     h2: {
-      fontSize: "clamp(2.5rem, 8vw, 3.5rem)",
+      fontSize: "clamp(2.5rem, 2vw, 3.5rem)",
       fontWeight: 700,
     },
     h3: {
-      fontSize: "clamp(2rem, 8vw,2.7rem)",
+      fontSize: "clamp(2rem, 2vw,2.7rem)",
       fontWeight: 500,
     },
     h4: {
-      fontSize: "clamp(1.6rem,8vw,2.4rem)",
+      fontSize: "clamp(1.6rem,2vw,2.4rem)",
       fontWeight: 500,
     },
     h5: {

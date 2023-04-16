@@ -19,10 +19,15 @@ import {
   IconButton,
 } from "@mui/material";
 
-import { logo, testimonial } from "../../assets";
 import {
-  LocalActivity,
-  LocationCityOutlined,
+  home09,
+  logo,
+  service04,
+  service05,
+  service06,
+  testimonial,
+} from "../../assets";
+import {
   LocationOnOutlined,
   MailOutline,
   MapOutlined,
@@ -31,6 +36,7 @@ import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 import Socials from "./Socials";
 import { Fragment } from "react";
+import Photos from "./Photos";
 
 const options = [
   {
@@ -79,16 +85,17 @@ export default function BottomAppBar() {
               container
               sx={{
                 display: "grid",
-                gap: "3rem",
+                gap: { md: "3rem", xs: "1.5rem" },
                 p: { md: 2, xs: 1 },
                 gridTemplateColumns: {
+                  sm: "1.5fr repeat(3,1fr)",
                   md: "repeat(4,1fr)",
                   xs: "repeat(2,1fr)",
                 },
                 flexWrap: { md: "nowrap", xs: "wrap" },
               }}
             >
-              <Grid item>
+              <Grid item gridColumn={{ xs: "1/3", sm: 1 }}>
                 <Grid container flexDirection={"column"}>
                   <Avatar
                     src={logo}
@@ -174,7 +181,7 @@ export default function BottomAppBar() {
                   ))}
                 </List>
               </Grid>
-              <Grid item>
+              <Grid item gridColumn={{ xs: "1/3", sm: 4 }}>
                 <Typography variant="h4" fontWeight={800}>
                   Testimonials
                 </Typography>
@@ -183,55 +190,14 @@ export default function BottomAppBar() {
                   container
                   sx={{
                     display: "grid",
-                    gap: 2,
+                    gap: 1,
                     py: 4,
                     gridTemplateColumns: "1fr 1fr",
                   }}
                 >
-                  <Grid item>
-                    <Avatar
-                      src={testimonial}
-                      variant="square"
-                      sx={{
-                        width: "100%",
-                        minHeight: "10rem",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <Avatar
-                      src={testimonial}
-                      variant="square"
-                      sx={{
-                        width: "100%",
-                        minHeight: "10rem",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <Avatar
-                      src={testimonial}
-                      variant="square"
-                      sx={{
-                        width: "100%",
-                        minHeight: "10rem",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <Avatar
-                      src={testimonial}
-                      variant="square"
-                      sx={{
-                        width: "100%",
-                        minHeight: "10rem",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </Grid>
+                  <Photos
+                    media={[testimonial, service04, service05, service06]}
+                  />
                 </Grid>
               </Grid>
             </Grid>
