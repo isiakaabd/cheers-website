@@ -1,13 +1,11 @@
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
-import App from "../App";
-import { muiTheme } from "../muiTheme";
+
 import { ThemeProvider } from "@mui/material";
+import { muiTheme } from "@/muiTheme";
+import App from "@/App";
 
 const AppRoutes = () => {
-  const loginStatus = false;
-  // useSelector((state) => state.auth.token);
-  //    useSelector((state) => state.auth.token);
   return (
     <ThemeProvider theme={muiTheme}>
       <BrowserRouter>

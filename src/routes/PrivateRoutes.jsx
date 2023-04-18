@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { MainPage } from "../pages/components";
-import { Service, LandingPage, FAQ, Gallery, Contact } from "../pages";
-
+import { Service, LandingPage, FAQ, Gallery, Contact } from "@pages";
+import { MainPage } from "@pages/components";
 const PrivateRoutes = () => {
   return (
     <Routes>

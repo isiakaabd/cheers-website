@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { bg, logo, bg01, bg06, bg03, bg02 } from "../../assets";
+import { bg, logo, bg01, bg06, bg03, bg02 } from "@assets";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";

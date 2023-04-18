@@ -1,6 +1,6 @@
 import { Avatar, Button, Grid, Typography } from "@mui/material";
-import React from "react";
-import { Question2Icon, QuestionIcon, service01 } from "../assets";
+
+import { service01 } from "@assets";
 import Socials from "./components/Socials";
 import { ContactUs } from "./components";
 import {

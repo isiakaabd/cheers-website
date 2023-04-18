@@ -2,8 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-
-import { bg, bg01, bg06, bg03, bg02 } from "../../assets";
+import { bg, bg01, bg06, bg03, bg02 } from "@assets";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const pagesAcc = [

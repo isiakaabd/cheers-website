@@ -6,7 +6,6 @@ import {
   Grid,
   IconButton,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import { AddOutlined, AddTaskOutlined } from "@mui/icons-material";
 

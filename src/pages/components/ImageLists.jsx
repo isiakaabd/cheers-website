@@ -14,7 +14,7 @@ import {
   service04,
   service05,
   service06,
-} from "../../assets";
+} from "@assets";
 
 export default function ImageLists() {
   const theme = useTheme();

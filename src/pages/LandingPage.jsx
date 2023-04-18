@@ -10,7 +10,6 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import React from "react";
 import {
   appstore,
   cale,
