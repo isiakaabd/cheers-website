@@ -7,7 +7,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { useState } from "react";
-import { AddOutlined, AddTaskOutlined } from "@mui/icons-material";
+import { AddOutlined } from "@mui/icons-material";
 
 export default function Accordions({ arr }) {
   return (

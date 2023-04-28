@@ -1,4 +1,4 @@
-import { Box, Grid, Toolbar } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Header, Footer } from ".";
 import { Outlet } from "react-router-dom";
 

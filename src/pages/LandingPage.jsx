@@ -20,7 +20,6 @@ import {
   home04,
   home09,
   home10,
-  service01,
   service02,
   service03,
   service04,
@@ -29,7 +28,6 @@ import {
   ArrowForward,
   CampaignOutlined,
   ShoppingCartOutlined,
-  SkipPreviousOutlined,
   WalletOutlined,
 } from "@mui/icons-material";
 import { Form, Formik } from "formik/dist";
