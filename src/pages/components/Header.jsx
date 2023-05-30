@@ -87,7 +87,7 @@ function Header() {
         position: "relative",
         minHeight: "100dvh",
         minHeight: "100vh",
-        // background: `#E20489 url(${active.image}) center no-repeat `,
+        backgroundColor: `#E20489`,
         backgroundSize: "cover",
         backgroundOrigin: "content-box",
       }}
@@ -98,8 +98,8 @@ function Header() {
         elevation={0}
         sx={{ height: "max-content", background: "transparent" }}
       >
-        <Container maxWidth="xl" sx={{ py: "1rem" }}>
-          <Toolbar disableGutters>
+        <Container maxWidth="lg">
+          <Toolbar disableGutters sx={{ py: "1rem" }}>
             <Avatar
               component={Link}
               to="/"
@@ -150,7 +150,11 @@ function Header() {
                   >
                     <Typography
                       textAlign="center"
-                      sx={{ fontSize: "1.6rem", fontWeight: 500 }}
+                      sx={{
+                        fontSize: "1.6rem",
+                        textTransform: "capitalize",
+                        fontWeight: 500,
+                      }}
                     >
                       {page.name}
                     </Typography>
@@ -159,7 +163,10 @@ function Header() {
               </Menu>
             </Box>
 
-            <Box gap={4} sx={{ display: { xs: "none", sm: "flex" } }}>
+            <Box
+              gap={4}
+              sx={{ mr: { sm: 1.5 }, display: { xs: "none", sm: "flex" } }}
+            >
               {pages.map((page) => (
                 <Button
                   key={page.route}
@@ -173,6 +180,7 @@ function Header() {
 
                     fontSize: { xs: "1.4rem", sm: "1.6rem", md: "1.9rem" },
                     display: "block",
+                    textTransform: "capitalize",
                     fontWeight: 700,
                   }}
                 >

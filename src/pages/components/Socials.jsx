@@ -29,16 +29,27 @@ const socialItems = [
   },
 ];
 
-const Socials = () => {
+const Socials = ({ fill, iconFillColor }) => {
   return (
-    <Grid item container justifyContent="space-between">
-      {socialItems.map((social, index) => (
-        <social.Button url={"#"} quote={"#"} key={index}>
-           <social.Icon size={32} round />
-        </social.Button>
-      ))}
+    <Grid item width={"80%"}>
+      <Grid item container justifyContent="space-between">
+        {socialItems.map((social, index) => (
+          <social.Button url={"#"} quote={"#"} color="#fff" key={index}>
+             
+            <social.Icon
+              size={28}
+              round
+              iconFillColor={iconFillColor}
+              bgStyle={{ fill }}
+            />
+          </social.Button>
+        ))}
+      </Grid>
     </Grid>
   );
 };
-
+Socials.defaultProps = {
+  fill: "#fff",
+  iconFillColor: "#6A1347",
+};
 export default Socials;

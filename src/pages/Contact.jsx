@@ -18,16 +18,20 @@ const Contact = () => {
         </Grid>
       </Grid>
       <Grid item md={10} mx="auto" sm={10} xs={12} py="5rem">
-        <Grid item container>
+        <Grid item container gap={{ md: "6rem" }}>
           <Grid item flex={1}>
             <Grid item container gap="2rem" flexDirection={"column"}>
-              <Grid item>
+              <Grid item container justifyContent={"center"}>
                 <QuestionIcon sx={{ fontSize: "4rem" }} />
               </Grid>
-              <Typography variant="h3" fontWeight={400}>
+              <Typography
+                variant="h3"
+                sx={{ textAlign: "center" }}
+                fontWeight={400}
+              >
                 General Support{" "}
               </Typography>
-              <Typography variant="h5">
+              <Typography variant="h5" sx={{ textAlign: "center" }}>
                 For general enquiries and support, kindly email us at{" "}
                 <Typography
                   color={"error"}
@@ -42,11 +46,13 @@ const Contact = () => {
           </Grid>
           <Grid item flex={1}>
             <Grid item container gap="2rem" flexDirection={"column"}>
-              <Grid item>
+              <Grid item container justifyContent={"center"}>
                 <Question2Icon sx={{ fontSize: "4rem" }} />
               </Grid>
-              <Typography variant="h3">FAQs</Typography>
-              <Typography variant="h5">
+              <Typography variant="h3" sx={{ textAlign: "center" }}>
+                FAQs
+              </Typography>
+              <Typography variant="h5" sx={{ textAlign: "center" }}>
                 Already a user or have questions? Check out our FAQs{" "}
                 <Typography
                   color={"error"}
@@ -75,7 +81,7 @@ const Contact = () => {
         </Typography>
         <Grid item md={3} sm={4} xs={5} mx="auto" my={"2rem"}>
           <Grid item container>
-            <Socials />
+            <Socials iconFillColor={"#fff"} fill={"#E20489"} />
           </Grid>
         </Grid>
       </Grid>

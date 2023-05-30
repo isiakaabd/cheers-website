@@ -49,7 +49,12 @@ function Swipe({ activeStep, setActiveStep }) {
 
   return (
     <Box
-      sx={{ width: "100%", flexGrow: 1, position: "absolute", height: "100vh" }}
+      sx={{
+        width: "100%",
+        flexGrow: 1,
+        position: "absolute",
+        height: { md: "100vh", xs: "50vh" },
+      }}
     >
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}

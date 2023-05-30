@@ -45,6 +45,7 @@ const options = [
 const text = {
   fontSize: "clamp(1.4rem,2vw,1.85rem)",
   fontWeight: 500,
+  lineHeight: "2.1rem",
 };
 export default function BottomAppBar() {
   const theme = useTheme();
@@ -87,7 +88,7 @@ export default function BottomAppBar() {
                     src={logo}
                     variant="square"
                     sx={{
-                      width: { sm: "10rem" },
+                      width: { xs: "15rem" },
                       "& img": { objectFit: "contain" },
                       mr: "auto",
                     }}
@@ -95,7 +96,12 @@ export default function BottomAppBar() {
                   <Typography
                     gutterBottom
                     variant="h5"
-                    sx={{ py: 4 }}
+                    sx={{
+                      py: 4,
+                      fontSize: { md: "1.8rem", xs: "1.6rem" },
+                      lineHeight: "2.1rem",
+                      fontWeight: 500,
+                    }}
                     textAlign={"justify"}
                   >
                     {" "}
@@ -160,6 +166,7 @@ export default function BottomAppBar() {
                           primary={item.name}
                           primaryTypographyProps={{
                             fontSize: "clamp(1.4rem,2vw,1.85rem)",
+                            lineHEight: "2.1rem",
                           }}
                         />
                       </ListItem>
@@ -178,7 +185,8 @@ export default function BottomAppBar() {
                     display: "grid",
                     gap: 1,
                     py: 4,
-                    gridTemplateColumns: "1fr 1fr",
+                    gridTemplateColumns: "13.5rem 13.5rem",
+                    gridTemplateRows: "7.5rem 7.5rem",
                   }}
                 >
                   <Photos

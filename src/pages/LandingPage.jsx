@@ -56,31 +56,31 @@ const LandingPage = () => {
       <Grid
         item
         container
-        px={2}
+        px={{ md: "4rem", xs: 1 }}
         my={4}
         sx={{
-          background: `url(${home01}) ${theme.palette.common.lightFuciaPink} center no-repeat `,
-          backgroundSize: "contain",
-          backgroundImage: { md: "none" },
+          backgroundColor: ` ${theme.palette.common.lightFuciaPink} `,
+          // backgroundSize: "contain",
+          // backgroundImage: { md: "none" },
           borderRadius: "1.5rem",
           minHeight: { md: "40rem", xs: "20rem", sm: "30rem" },
         }}
-        py={5}
+        pt={1}
       >
         <Grid item flex={2}>
           <Grid
             item
             container
             flexDirection={"column"}
-            sx={{ height: "100%", textShadow: "0 .5px 0 black" }}
+            sx={{ height: "100%" }}
             justifyContent={"center"}
             gap={2}
           >
-            <Typography variant="h6">
+            <Typography variant="h6" sx={{ color: "#5A5959" }}>
               Sit back, relax and enjoy an exciting new way to be the center of
               attention as you celebrate your special day.
             </Typography>
-            <Typography variant="h6">
+            <Typography variant="h6" sx={{ color: "#5A5959" }}>
               Get the gifts you really want by creating a bespoke wishlist and
               sharing it with your friends for crowdfunding then take it a step
               further by using our social features to share/spread the love and
@@ -107,7 +107,7 @@ const LandingPage = () => {
           container
           py={4}
           justifyContent={"center"}
-          sx={{ maxWidth: { md: "90%", xs: "100%" }, mx: "auto" }}
+          sx={{ px: { md: "2rem" } }}
         >
           <Grid item>
             <Typography
@@ -115,6 +115,7 @@ const LandingPage = () => {
               gutterBottom
               variant="h2"
               color={"secondary"}
+              mb={4}
             >
               Elevate your{" "}
               <Typography variant="span" color={"primary"}>
@@ -122,10 +123,11 @@ const LandingPage = () => {
               </Typography>{" "}
             </Typography>
             <Typography
-              textAlign={{ xs: "justify" }}
+              textAlign={{ xs: "justify", sm: "center" }}
               gutterBottom
               color="info"
               variant="h4"
+              fontSize={{ md: "2.2rem", xs: "1.6rem" }}
             >
               By using CHEERS, our exciting features will help you experience
               birthdays as they are truly meant to be filled with love,
@@ -154,14 +156,26 @@ const LandingPage = () => {
             >
               Social Features{" "}
             </Typography>
-            <Typography color="info" variant="h6" textAlign={{ xs: "justify" }}>
+            <Typography
+              color="info"
+              variant="h6"
+              sx={{
+                fontSize: {
+                  md: "2.2rem",
+                  xs: "1.8rem",
+                  fontWeight: 400,
+                  lineHeight: "2.5rem",
+                },
+              }}
+              textAlign={{ xs: "justify" }}
+            >
               With great features like birthday reminders, status updates &
               messaging. CHEERS will save you the stress of checking the
               calendar every other day, the trouble of sending apology notes and
               sitting through tantrums because you forgot a birthday.{" "}
             </Typography>
           </Grid>
-          <Grid item flex={1} sx={{ maxHeight: "30rem" }}>
+          <Grid item flex={1} sx={{ maxHeight: "36rem" }}>
             <Avatar
               src={cale}
               variant="square"
@@ -181,7 +195,7 @@ const LandingPage = () => {
           py={4}
           flexDirection={{ xs: "column", sm: "row" }}
         >
-          <Grid item flex={1} sx={{ maxHeight: "30rem" }}>
+          <Grid item flex={1} sx={{ maxHeight: "36rem" }}>
             <Avatar
               src={home02}
               variant="square"
@@ -194,9 +208,13 @@ const LandingPage = () => {
             />
           </Grid>
           <Grid item flex={{ md: 1, xs: 2 }} sx={{ alignSelf: "center" }}>
-            <Grid item>
+            <Grid item container justifyContent={"right"}>
               <ShoppingCartOutlined
-                sx={{ fontSize: { xs: "4rem", md: "6rem" }, fill: "#E20489" }}
+                sx={{
+                  fontSize: { xs: "4rem", md: "6rem" },
+                  ml: "auto",
+                  fill: "#E20489",
+                }}
               />
             </Grid>
             <Typography
@@ -204,10 +222,23 @@ const LandingPage = () => {
               variant="h3"
               fontWeight={800}
               color={"secondary"}
+              sx={{ textAlign: "right" }}
             >
               Wishlist & Marketplace Features
             </Typography>
-            <Typography color="info" variant="h6" textAlign={{ xs: "justify" }}>
+            <Typography
+              color="info"
+              variant="h6"
+              textAlign={{ xs: "justify" }}
+              sx={{
+                fontSize: {
+                  md: "2.2rem",
+                  xs: "1.8rem",
+                  fontWeight: 400,
+                  lineHeight: "2.5rem",
+                },
+              }}
+            >
               As you create your Birthday Wishlist, choose from a wide selection
               of amazing gifts from local and international vendors in our
               Marketplace. Once fulfilled, your birthday gifts will be delivered
@@ -240,13 +271,18 @@ const LandingPage = () => {
               {arr.map((ite) => (
                 <ListItem key={ite.key} dense disableGutters disablePadding>
                   <ListItemText
-                    primaryTypographyProps={{ textAlign: "justify" }}
+                    primaryTypographyProps={{
+                      textAlign: "justify",
+                      color: "#8A8A8A",
+                      lineHeight: "2.5rem",
+                    }}
                     primary={
                       <Typography
                         variant="h6"
                         fontWeight={700}
                         color={"info"}
                         textAlign="justify"
+                        sx={{ lineHeight: "2.5rem" }}
                       >
                         {ite.key}:
                         <Typography variant="span" fontWeight={400}>
@@ -259,7 +295,7 @@ const LandingPage = () => {
               ))}
             </List>
           </Grid>
-          <Grid item flex={1} sx={{ maxHeight: "30rem" }}>
+          <Grid item flex={1} sx={{ maxHeight: "36rem" }}>
             <Avatar
               src={home03}
               variant="square"
@@ -274,6 +310,7 @@ const LandingPage = () => {
         </Grid>
 
         <Grid
+          my={4}
           px={3}
           py={5}
           item
@@ -379,7 +416,7 @@ const LandingPage = () => {
           item
           container
           flexDirection={{ xs: "column", sm: "row" }}
-          mt={4}
+          mt={{ md: "15rem", xs: "3rem" }}
           gap={4}
         >
           <Grid item flex={1}>
@@ -390,7 +427,7 @@ const LandingPage = () => {
                 width: "100%",
                 borderRadius: "1.3rem",
                 height: "100%",
-                maxHeight: "40rem",
+                maxHeight: "49rem",
               }}
             />
           </Grid>
@@ -402,7 +439,14 @@ const LandingPage = () => {
               alignItems={"space-between"}
               sx={{ height: "100%" }}
             >
-              <Typography variant="h5" my={2}>
+              <Typography
+                variant="h5"
+                my={2}
+                sx={{
+                  lineHeight: "2.1rem",
+                  fontSize: { md: "1.8rem", xs: "1.6rem" },
+                }}
+              >
                 Get started and enjoy your birthday just the way you want it to
                 be full of love, fun & excitement!!!{" "}
                 <Typography variant="span" color={"error"}>
@@ -476,7 +520,10 @@ const LandingPage = () => {
           alignItems={"center"}
           py={4}
           px={2}
-          sx={{ bgcolor: "rgba(255, 185, 235, 0.45)", mt: 4 }}
+          sx={{
+            bgcolor: "rgba(255, 185, 235, 0.45)",
+            mt: { md: "6rem", xs: 4 },
+          }}
         >
           <Grid item sx={{ width: "100%" }}>
             <Typography variant="h2" textAlign={"center"}>
@@ -485,7 +532,12 @@ const LandingPage = () => {
                 frequently asked questions (FAQ)
               </Typography>
             </Typography>
-            <Typography variant="h5" my={2} textAlign={"center"}>
+            <Typography
+              variant="h5"
+              my={2}
+              textAlign={"center"}
+              fontSize={{ md: "1.8rem", xs: "1.6rem", lineHeight: "2.1rem" }}
+            >
               If others are asking, then you're probably thinking the same
               thing. Here are some answers that would help.
             </Typography>
@@ -564,7 +616,7 @@ const LandingPage = () => {
                 <Button
                   disableElevation
                   variant="contained"
-                  color="error"
+                  color="primary"
                   sx={{
                     fontWeight: 700,
                     width: "100%",

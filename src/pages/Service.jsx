@@ -24,7 +24,7 @@ const Service = () => {
       text: "Aorem ipsum dolor sit amet consectetur elit sed lusm tempor incididunt ut labore et dolore mag aliqua enima minim veniam quis nostrud exercitation",
     },
     {
-      name: "WIshlist",
+      name: "Wishlist",
       Icon: WalletOutlined,
       text: "Aorem ipsum dolor sit amet consectetur elit sed lusm tempor incididunt ut labore et dolore mag aliqua enima minim veniam quis nostrud exercitation",
     },
@@ -64,12 +64,12 @@ const Service = () => {
         py="5rem"
         px={"4rem"}
         display={"grid"}
-        gap={"3rem"}
+        gap={"4rem"}
         gridTemplateColumns={{ md: "repeat(3,1fr)", sm: "1fr 1fr", xs: "1fr" }}
       >
         {arr.map((item, idx) => (
           <Grid item container key={idx}>
-            <Grid item container alignItems={"center"}>
+            <Grid item container>
               <Grid item mr={1}>
                 <item.Icon sx={{ fontSize: "4rem", fill: "#E20489" }} />
               </Grid>
@@ -138,7 +138,7 @@ const Service = () => {
               variant="square"
             />
           </Grid>
-          <Grid item>
+          <Grid item sx={{ my: 5 }}>
             <Button
               disableElevation
               color="error"
