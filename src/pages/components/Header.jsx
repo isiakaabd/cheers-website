@@ -85,7 +85,6 @@ function Header() {
       container
       sx={{
         position: "relative",
-        // minHeight: "100dvh",
         minHeight: "100vh",
         backgroundColor: `#E20489`,
         backgroundSize: "cover",
