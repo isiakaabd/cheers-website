@@ -1,8 +1,7 @@
-import { Avatar, Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 
 import { service01 } from "@assets";
-import Socials from "./components/Socials";
-import { ContactUs } from "./components";
+
 import {
   ArrowForward,
   CampaignOutlined,
@@ -10,8 +9,15 @@ import {
   WalletOutlined,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import { A, C, D, E, F, G, H, I, J, K, L, M } from "@assets/index";
 
 const Service = () => {
+  let flex = {
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "space-evenly",
+  };
   const arr = [
     {
       name: "Birthday Planning",
@@ -121,7 +127,7 @@ const Service = () => {
           </Typography>
         </Grid>
         <Grid item container my="4rem" gap={2} justifyContent={"center"}>
-          <Grid item justifyContent={"center"} container gap={2}>
+          {/* <Grid item justifyContent={"center"} container gap={2}>
             <Avatar
               src={service01}
               sx={{ width: "30rem", height: "15rem" }}
@@ -137,6 +143,132 @@ const Service = () => {
               sx={{ width: "30rem", height: "15rem" }}
               variant="square"
             />
+          </Grid> */}
+
+          <Grid item container my={"4rem"}>
+            <Carousel
+              infiniteLoop={true}
+              autoPlay={true}
+              showIndicators={false}
+              showThumbs={false}
+              showStatus={false}
+              dynamicHeight={false}
+            >
+              <div style={flex}>
+                <img
+                  src={A}
+                  style={{
+                    objectFit: "cover",
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+
+                <img
+                  src={C}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={D}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={M}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+              </div>
+              <div style={flex}>
+                <img
+                  src={E}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={F}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={G}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={H}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+              </div>
+              <div style={flex}>
+                <img
+                  src={I}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={J}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={K}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+                <img
+                  src={L}
+                  style={{
+                    objectFit: "cover",
+
+                    width: "27.5rem",
+                    height: "35rem",
+                  }}
+                />
+              </div>
+            </Carousel>
           </Grid>
           <Grid item sx={{ my: 5 }}>
             <Button

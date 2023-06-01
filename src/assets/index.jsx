@@ -12,12 +12,30 @@ import home01 from "./images/home01.png";
 import cale from "./images/cale.png";
 import annoucement from "./images/annoucement.png";
 import home02 from "./images/home02.png";
+import image11 from "./images/01.png";
+import image12 from "./images/02.png";
+import image13 from "./images/03.png";
+import image14 from "./images/04.png";
+import image15 from "./images/05.png";
 import home03 from "./images/home03.png";
 import home04 from "./images/home04.png";
 import home05 from "./images/home05.png";
 import home06 from "./images/home06.png";
 import home09 from "./images/home09.png";
 import home10 from "./images/home10.png";
+import A from "./images/A.png";
+import B from "./images/B.png";
+import C from "./images/C.jpg";
+import D from "./images/D.jpg";
+import E from "./images/E.jpg";
+import F from "./images/F.jpg";
+import G from "./images/G.jpg";
+import H from "./images/H.jpg";
+import I from "./images/I.png";
+import J from "./images/J.jpg";
+import K from "./images/K.jpg";
+import L from "./images/L.jpg";
+import M from "./images/M.png";
 import appstore from "./images/appstore.png";
 import googleplay from "./images/googleplay.png";
 import service01 from "./images/service01.png";
@@ -51,7 +69,25 @@ export {
   home03,
   home09,
   home10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
   home04,
+  A,
+  B,
+  C,
+  D,
+  E,
+  F,
+  G,
+  H,
+  I,
+  J,
+  K,
+  L,
+  M,
   Question2Icon,
   annoucement,
   googleplay,

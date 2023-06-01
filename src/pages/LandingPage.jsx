@@ -20,9 +20,12 @@ import {
   home04,
   home09,
   home10,
-  service02,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
   service03,
-  service04,
 } from "../assets";
 import {
   ArrowForward,
@@ -51,6 +54,11 @@ const LandingPage = () => {
       val: "Your friends contribute to fulfilling your wishlist by eitherbuying a gift outright or adding funds towards the fulfillment of your top/preferred gift(s).",
     },
   ];
+  let flex = {
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "space-evenly",
+  };
   return (
     <Grid item container sx={{ height: "100%" }}>
       <Grid
@@ -346,38 +354,58 @@ const LandingPage = () => {
               showThumbs={false}
               showStatus={false}
               dynamicHeight={false}
-              // width={"100%"}
-              // renderArrowNext={() => <SkipPreviousOutlined />}
             >
-              <div
-                style={{
-                  display: "flex",
-                  gap: "1rem",
-                  justifyContent: "space-evenly",
-                }}
-              >
+              <div style={flex}>
                 <img
-                  src={service04}
+                  src={image13}
                   style={{ objectFit: "contain", height: "30rem" }}
                 />
                 <img
-                  src={service04}
+                  src={image12}
                   style={{ objectFit: "contain", height: "30rem" }}
                 />
                 <img
-                  src={service04}
+                  src={image15}
                   style={{ objectFit: "contain", height: "30rem" }}
                 />
-              </div>
-              <div>
                 <img
-                  src={service02}
+                  src={image14}
                   style={{ objectFit: "contain", height: "30rem" }}
                 />
               </div>
-              <div>
+              <div style={flex}>
+                <img
+                  src={image14}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={image11}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={image11}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={image14}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+              </div>
+              <div style={flex}>
+                <img
+                  src={image13}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={image12}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
                 <img
                   src={service03}
+                  style={{ objectFit: "contain", height: "30rem" }}
+                />
+                <img
+                  src={image14}
                   style={{ objectFit: "contain", height: "30rem" }}
                 />
               </div>
