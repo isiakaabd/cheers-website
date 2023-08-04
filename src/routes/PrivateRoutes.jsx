@@ -1,6 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import { Service, LandingPage, FAQ, Gallery, Contact } from "@pages";
+import {
+  Service,
+  LandingPage,
+  HelpCenter,
+  TermsOfUse,
+  FAQ,
+  Gallery,
+  Contact,
+} from "@pages";
 import { MainPage } from "@pages/components";
+import PrivacyPolicy from "@pages/PrivacyPolicy";
 const PrivateRoutes = () => {
   return (
     <Routes>
@@ -10,6 +19,9 @@ const PrivateRoutes = () => {
         <Route path="faq" element={<FAQ />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="policy" element={<PrivacyPolicy />} />
+        <Route path="terms-of-use" element={<TermsOfUse />} />
+        <Route path="help-center" element={<HelpCenter />} />
       </Route>
     </Routes>
   );
