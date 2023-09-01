@@ -4,4 +4,4 @@ deploy:
     - echo "Deploying the Vite app to DigitalOcean..."
     - scp -r ./dist/* root@$DROPLET_IP:/var/www/html
   only:
-    - master
+    - main
