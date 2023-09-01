@@ -5,23 +5,36 @@ import FormikControl from "@validation/FormikControl";
 
 const ContactUs = () => {
   return (
-    <Grid item container sx={{ bgcolor: "#F5F5F5", py: "2rem" }}>
+    <Grid item container sx={{ bgcolor: "#F5F5F5", py: "4rem" }}>
       <Typography
         gutterBottom
         variant="h2"
-        sx={{ width: "100%", textAlign: "center" }}
+        color="text.secondary"
+        sx={{ width: "100%", textAlign: "center", fontWeight: 700 }}
       >
         Get in touch with us
       </Typography>
       <Typography
         variant="h5"
+        color="text.secondary"
         gutterBottom
-        sx={{ width: { md: "80%" }, mx: "auto", textAlign: "center" }}
+        sx={{
+          width: { md: "80%" },
+          mx: "auto",
+          fontWeight: 400,
+          textAlign: "center",
+        }}
       >
         We hoped the FAQs would help. Since they didn't, please fill this short
         form and we'd give you special attention as quickly as possible.
       </Typography>
-      <Grid item sm={8} md={6} xs={12} sx={{ mx: "auto", mt: 3 }}>
+      <Grid
+        item
+        sm={8}
+        md={6}
+        xs={10}
+        sx={{ mx: "auto", mt: { md: "4rem", xs: 3 } }}
+      >
         <Grid item container>
           <Formik initialValues={{ name: "", email: "", description: "" }}>
             <Form>

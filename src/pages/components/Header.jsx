@@ -11,9 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { bg, logo, bg01, bg06, bg03, bg02 } from "@assets";
+import { bg, logo, bg01, bg05, contact, bg07, bg06, bg03, bg02 } from "@assets";
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Swipe from "./Swipe";
 
@@ -22,47 +22,31 @@ const pages = [
     name: "Home",
     route: "/",
   },
-  {
-    name: "Testimonials",
-    route: "/gallery",
-  },
+
   {
     name: "Vendor",
-    route: "/service",
+    route: "https://cheers-vendor.netlify.app",
   },
 ];
 const pagesAcc = [
   {
-    text: "Frequently Asked Question (FAQ)",
-    subText:
-      "If others are asking, then you're probably thinking the same thing. Here are some answers that would help.",
+    text: "Create exceptional moments",
+    subText: null,
     route: "/faq",
-    image: bg03,
+    imgPath: bg07,
   },
   {
     text: "Make all your Birthday wishes come true",
     subText: null,
     route: "/",
-    image: bg06,
+    imgPath: bg06,
   },
+
   {
-    text: "Talk to us, we are here 24/7 ",
-    subText:
-      "Providing an exciting new way to be the center of attention as you celebrate your special day is personal for us, so we’d love to hear from you.",
-    route: "/contact",
-    image: bg,
-  },
-  {
-    text: "What we do",
+    text: "Show Love",
     subText: null,
     route: "/service",
-    image: bg02,
-  },
-  {
-    text: "Events Gallery",
-    subText: null,
-    route: "/gallery",
-    image: bg01,
+    imgPath: bg05,
   },
 ];
 
@@ -78,7 +62,7 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  const { pathname } = useLocation();
   return (
     <Grid
       item
@@ -150,9 +134,9 @@ function Header() {
                     <Typography
                       textAlign="center"
                       sx={{
-                        fontSize: "1.6rem",
+                        fontSize: "1.9rem",
                         textTransform: "capitalize",
-                        fontWeight: 500,
+                        fontWeight: 700,
                       }}
                     >
                       {page.name}
@@ -171,8 +155,10 @@ function Header() {
                   key={page.route}
                   component={Link}
                   to={page.route}
+                  disableElevation
                   variant={page.name === "Vendor" && "contained"}
                   color="error"
+                  target="_blank"
                   sx={{
                     my: 2,
                     color: "white",
@@ -198,24 +184,30 @@ function Header() {
         alignItems={"center"}
       >
         <Typography variant="h1" textAlign={"center"} gutterBottom>
-          {pagesAcc[activeStep].text}{" "}
+          {pathname === "/contact"
+            ? "Talk to us, we are here 24/7 "
+            : pagesAcc[activeStep].text}{" "}
         </Typography>
-        {pagesAcc[activeStep].subText && (
+        {(pagesAcc[activeStep].subText || pathname === "/contact") && (
           <Typography variant="h5" textAlign={"center"} color={"#fff"}>
-            {pagesAcc[activeStep].subText}
+            {pathname === "/contact"
+              ? "Providing an exciting new way to be the center of attention as you celebrate your special day is personal for us, so we’d love to hear from you."
+              : pagesAcc[activeStep].subText}
           </Typography>
         )}
-        <Grid item mt={6}>
-          <Button
-            variant="contained"
-            href="#day"
-            color="error"
-            disableElevation
-            sx={{ fontSize: "2.6rem", fontWeight: 700 }}
-          >
-            Get Started
-          </Button>
-        </Grid>
+        {pathname !== "/contact" && pathname !== "/terms-of-use" && (
+          <Grid item mt={6}>
+            <Button
+              variant="contained"
+              href="#day"
+              color="error"
+              disableElevation
+              sx={{ fontSize: "2.6rem", fontWeight: 700 }}
+            >
+              Get Started
+            </Button>
+          </Grid>
+        )}
       </Grid>
     </Grid>
   );

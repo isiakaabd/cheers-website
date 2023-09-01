@@ -22,7 +22,6 @@ import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 import Socials from "./Socials";
 import { Fragment } from "react";
-import Photos from "./Photos";
 
 const options = [
   {
@@ -31,15 +30,15 @@ const options = [
   },
   {
     name: "FAQ",
-    link: "/faq",
+    link: "/#faq",
   },
-  {
-    name: "Services",
-    link: "/service",
-  },
+  // {
+  //   name: "Services",
+  //   link: "/service",
+  // },
   {
     name: "Become a CHEERS VENDOR",
-    link: "/service",
+    link: "https://cheers-vendor.netlify.app",
   },
 ];
 const text = {
@@ -72,11 +71,11 @@ export default function BottomAppBar() {
               container
               sx={{
                 display: "grid",
-                gap: { md: "3rem", xs: "1.5rem" },
+                gap: { md: "5rem", xs: "1.5rem" },
                 p: { md: 2, xs: 1 },
                 gridTemplateColumns: {
-                  sm: "1.5fr repeat(3,1fr)",
-                  md: "repeat(4,1fr)",
+                  sm: "1.5fr repeat(2,1fr)",
+                  md: "repeat(3,1fr)",
                   xs: "repeat(2,1fr)",
                 },
                 flexWrap: { md: "nowrap", xs: "wrap" },
@@ -118,25 +117,19 @@ export default function BottomAppBar() {
                 </Typography>
                 <List sx={{ py: 4 }}>
                   <ListItem disableGutters dense>
-                    <ListItemIcon sx={{ minWidth: "4rem" }}>
-                      <LocationOnOutlined
-                        color="error"
-                        sx={{ fontSize: "3rem" }}
+                    <ListItemButton
+                      disableGutters
+                      component={Link}
+                      to={`mailto:hello@cheers.global`}
+                    >
+                      <ListItemIcon sx={{ minWidth: "4rem" }}>
+                        <MailOutline color="error" sx={{ fontSize: "3rem" }} />
+                      </ListItemIcon>
+                      <ListItemText
+                        primaryTypographyProps={text}
+                        primary="hello@cheers.global"
                       />
-                    </ListItemIcon>
-                    <ListItemText
-                      primaryTypographyProps={text}
-                      primary="11, Adeniyi Jones, off Oba Akran Ikeja Lagos"
-                    />
-                  </ListItem>
-                  <ListItem disableGutters dense>
-                    <ListItemIcon sx={{ minWidth: "4rem" }}>
-                      <MailOutline color="error" sx={{ fontSize: "3rem" }} />
-                    </ListItemIcon>
-                    <ListItemText
-                      primaryTypographyProps={text}
-                      primary="info@cheers.africa"
-                    />
+                    </ListItemButton>
                   </ListItem>
                 </List>
               </Grid>
@@ -153,6 +146,7 @@ export default function BottomAppBar() {
                       to={item.link}
                       disableGutters
                       disableTouchRipple
+                      // href={item.link === "#faq" && "#faq"}
                       disableRipple
                       sx={{
                         textDecoration: "underline",
@@ -173,26 +167,6 @@ export default function BottomAppBar() {
                     </ListItemButton>
                   ))}
                 </List>
-              </Grid>
-              <Grid item gridColumn={{ xs: "1/3", sm: 4 }}>
-                <Typography variant="h4" fontWeight={800}>
-                  Testimonials
-                </Typography>
-                <Grid
-                  item
-                  container
-                  sx={{
-                    display: "grid",
-                    gap: 1,
-                    py: 4,
-                    gridTemplateColumns: "13.5rem 13.5rem",
-                    gridTemplateRows: "7.5rem 7.5rem",
-                  }}
-                >
-                  <Photos
-                    media={[testimonial, service04, service05, service06]}
-                  />
-                </Grid>
               </Grid>
             </Grid>
             <Typography

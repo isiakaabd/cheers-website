@@ -1,5 +1,5 @@
 import Input from "./Input";
-import Selects from "./Select";
+import SelectComponent from "./Select";
 import PropTypes from "prop-types";
 import CheckBox from "./Checkboxs";
 import TextArea from "./Textarea";
@@ -10,7 +10,7 @@ const FormikControl = ({ control, ...rest }) => {
       return <Input {...rest} />;
 
     case "select":
-      return <Selects {...rest} />;
+      return <SelectComponent {...rest} />;
 
     case "checkbox":
       return <CheckBox {...rest} />;

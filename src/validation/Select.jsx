@@ -1,91 +1,57 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Field, ErrorMessage } from "formik/dist";
-import { Typography, Select, MenuItem, Grid } from "@mui/material";
-
+import { Select, Grid, MenuItem, FormControl, InputLabel } from "@mui/material";
+import { ErrorMessage, Field, useFormikContext } from "formik/dist";
 import { TextError } from "./TextError";
 
-export const Formiks = ({
-  borderRadius,
-  defaultValue,
+const ControlledOpenSelect = ({
   placeholder,
+  name,
   options,
+  value,
   ...rest
 }) => {
-  return (
-    <Select
-      displayEmpty
-      {...rest}
-      renderValue={(value) => (
-        <Typography color="#111b21">
-          {value || defaultValue || placeholder}
-        </Typography>
-      )}
-      // placeholder={placeholder}
-      sx={{
-        borderRadius: borderRadius ? borderRadius : "1rem",
-        color: "#111b21",
-        height: "4rem",
+  const { errors, touched } = useFormikContext();
 
-        "&:active,&:focus": {
-          borderColor: "currentColor",
-          outline: "none",
-        },
-        "& .MuiSelect-icon": {
-          fontSize: "3rem",
-          color: "#828484",
-        },
-      }}
-    >
-      {/* <MenuItem value="">{placeholder}</MenuItem> */}
-      {options?.map((option) => (
-        <MenuItem key={option?.value} value={option?.value}>
-          {option?.label}
-        </MenuItem>
-      ))}
-    </Select>
+  return (
+    <FormControl>
+      <InputLabel id={name}>{placeholder}</InputLabel>
+
+      <Select
+        labelId={name}
+        id={name}
+        size="medium"
+        label={placeholder}
+        error={!!errors[name] && touched[name]}
+        {...rest}
+        name={name}
+        value={value || ""}
+        sx={{
+          "& .MuiSelect-icon": {
+            fontSize: "3rem",
+            color: "#828484",
+          },
+        }}
+      >
+        <MenuItem value="">{placeholder}</MenuItem>
+        {options.map((option, index) => (
+          <MenuItem key={index} value={option.value}>
+            {option.key}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 };
 
-Formiks.propTypes = {
-  value: PropTypes.string,
-  label: PropTypes.string,
-  onChange: PropTypes.func,
-  children: PropTypes.node,
-  name: PropTypes.string,
-};
-
-const Selects = (props) => {
-  const {
-    label,
-    name,
-    type,
-    styles,
-    helperText,
-    options,
-    placeholder,
-    ...rest
-  } = props;
+const SelectComponent = (props) => {
+  const { name, ...rest } = props;
 
   return (
     <Grid container direction="column">
-      <Field
-        id={name}
-        type="select"
-        options={options}
-        placeholder={placeholder}
-        name={name}
-        as={Formiks}
-        {...rest}
-      />
-      {helperText && <Typography variant="span">{helperText}</Typography>}
+      <Field id={name} name={name} {...rest} as={ControlledOpenSelect} />
+
       <ErrorMessage name={name} component={TextError} />
     </Grid>
   );
 };
-Selects.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string,
-};
 
-export default Selects;
+export default SelectComponent;

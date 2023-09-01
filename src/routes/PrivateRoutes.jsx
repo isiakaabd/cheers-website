@@ -15,10 +15,10 @@ const PrivateRoutes = () => {
     <Routes>
       <Route element={<MainPage />}>
         <Route path="/*" index element={<LandingPage />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="service" element={<Service />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="gallery" element={<Gallery />} />
-        <Route path="contact" element={<Contact />} />
         <Route path="policy" element={<PrivacyPolicy />} />
         <Route path="terms-of-use" element={<TermsOfUse />} />
         <Route path="help-center" element={<HelpCenter />} />

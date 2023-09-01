@@ -1,12 +1,12 @@
+import { InstagramIcon } from "@assets/index";
 import { Grid } from "@mui/material";
 import {
-  WhatsappShareButton,
-  WhatsappIcon,
   TwitterShareButton,
   LinkedinIcon,
   LinkedinShareButton,
   TwitterIcon,
   FacebookIcon,
+  InstapaperIcon,
   FacebookShareButton,
 } from "react-share";
 
@@ -24,8 +24,8 @@ const socialItems = [
     Button: TwitterShareButton,
   },
   {
-    Icon: WhatsappIcon,
-    Button: WhatsappShareButton,
+    Icon: InstapaperIcon,
+    Button: FacebookShareButton,
   },
 ];
 
@@ -35,10 +35,10 @@ const Socials = ({ fill, iconFillColor }) => {
       <Grid item container justifyContent="space-between">
         {socialItems.map((social, index) => (
           <social.Button url={"#"} quote={"#"} color="#fff" key={index}>
-             
             <social.Icon
               size={28}
               round
+              sx={{ color: "#fff", backgroundColor: "#fff", fontSize: 28 }}
               iconFillColor={iconFillColor}
               bgStyle={{ fill }}
             />

@@ -54,7 +54,7 @@ function Accord({ item }) {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography variant="h5" color={"#969595"}>
+        <Typography variant="h5" sx={{ color: "#969595", fontWeight: 600 }}>
           {item.topic}
         </Typography>
       </AccordionSummary>

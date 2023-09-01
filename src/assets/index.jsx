@@ -43,10 +43,15 @@ import service02 from "./images/service02.png";
 import service03 from "./images/service03.png";
 import service04 from "./images/service04.png";
 import service05 from "./images/service05.png";
-import service06 from "./images/service06.png";
 import QuestionIcon from "./svgs/Question";
+import service06 from "./images/service06.png";
+import contact from "./images/contact.png";
 import Question2Icon from "./svgs/Question2";
+import InstagramIcon from "./svgs/Instagram";
+
 export {
+  InstagramIcon,
+  contact,
   logo,
   home01,
   bg,

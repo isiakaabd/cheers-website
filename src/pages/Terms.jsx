@@ -1,60 +1,149 @@
-import { Typography, Grid } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 
 const TermsOfUse = () => {
   return (
-    <Grid item container px={2} py={8} gap={4}>
-      <Typography variant="h4">Terms of Use</Typography>
-      <Typography variant="h5">
-        Welcome to Cheers, your friendly chatting platform. By using Cheers, you
-        agree to these Terms of Use. Please read them carefully before using the
-        app.
-      </Typography>
-      <Typography variant="h5">User Conduct:</Typography>
-      <Typography variant="h5">
-        Cheers is designed for positive and respectful communication. You agree
-        not to use the app for any harmful, unlawful, or offensive activities.
-        Do not engage in harassment, spam, or any form of harmful behavior
-        towards others.
-      </Typography>
-      <Typography variant="h5">Privacy and Data:</Typography>
-      <Typography variant="h5">
-        We value your privacy and take data protection seriously. Our Privacy
-        Policy explains how we collect, use, and store your personal
-        information. By using Cheers, you consent to the practices described in
-        our Privacy Policy.
-      </Typography>
-      <Typography variant="h5">Intellectual Property:</Typography>
-      <Typography variant="h5">
-        The content and features in Cheers, including logos, designs, and text,
-        are owned by Cheers and are protected by copyright and intellectual
-        property laws. You may not use, reproduce, or distribute our content
-        without permission.
-      </Typography>
-      <Typography variant="h5">Account Security:</Typography>
-      <Typography variant="h5">
-        You are responsible for maintaining the security of your Cheers account.
-        Do not share your account details with others, and promptly notify us if
-        you suspect any unauthorized access.
-      </Typography>
-      <Typography variant="h5">Disclaimer of Warranty:</Typography>
-      <Typography variant="h5">
-        Cheers is provided "as is" without any warranties. We do not guarantee
-        that the app will be error-free, secure, or available at all times. Your
-        use of Cheers is at your own risk.
-      </Typography>
-      <Typography variant="h5">Changes to Terms:</Typography>
-      <Typography variant="h5">
-        We may update these Terms of Use to reflect changes in our services or
-        legal requirements. Any changes will be reflected on this page, and your
-        continued use of Cheers constitutes your acceptance of the most recent
-        version of these terms.
-      </Typography>
-      <Typography variant="h5">Contact Us:</Typography>
-      <Typography variant="h5">
-        If you have any questions or concerns about these Terms of Use or
-        Cheers' operation, please contact us at support@cheersapp.com.
-      </Typography>
-    </Grid>
+    <Container maxWidth="lg">
+      {/* Privacy Policy */}
+      <Box my={4}>
+        <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
+          Privacy Policy for Cheers
+        </Typography>
+        <Typography variant="h5" color="text.secondary" paragraph>
+          Last Updated: March 2023
+        </Typography>
+        <Typography variant="body1" paragraph>
+          These Terms of Use ("Terms") govern your use of the Cheers mobile
+          application ("App") provided by Oriki Technologies Ltd ("we," "our,"
+          or "us"). By using the App, you agree to be bound by these Terms. If
+          you do not agree with these Terms, please refrain from using the App.
+        </Typography>
+        <Typography variant="h6" gutterBottom>
+          1. Use of the App
+        </Typography>
+        <Typography variant="body1" paragraph>
+          You must be 15 years or older to use the App, depending on the legal
+          age in your jurisdiction.
+        </Typography>
+        <Typography variant="body1">
+          You agree to use the App only for lawful purposes and in compliance
+          with all applicable laws and regulations.{" "}
+        </Typography>
+        <Typography variant="body1" paragraph>
+          You are responsible for maintaining the security of your account and
+          the confidentiality of your login credentials.{" "}
+        </Typography>
+        <Typography variant="body1">
+          You shall not engage in any unauthorized use, reproduction, or
+          distribution of the App's content.{" "}
+        </Typography>
+        <Typography variant="body1" paragraph>
+          You shall not attempt to interfere with the security, functionality,
+          or availability of the App.
+        </Typography>
+        <Typography variant="body1">
+          You shall not use the App to transmit any harmful or offensive
+          content, including malware or inappropriate materials.{" "}
+        </Typography>
+        <Typography variant="body1" paragraph>
+          You shall not engage in any conduct that could disrupt other users'
+          experience or harm our reputation.{" "}
+        </Typography>
+        {/* 2 */}
+
+        <Typography variant="h6">
+          <strong>2. User Content</strong>
+        </Typography>
+
+        <Typography variant="body1">
+          Any content you submit to the App, including comments, reviews,
+          messages, and other materials, must comply with our content guidelines
+          and applicable laws.
+        </Typography>
+        <Typography variant="body1" paragraph>
+          By submitting content, you grant us a non-exclusive, royalty-free,
+          worldwide, perpetual, and irrevocable license to use, modify,
+          reproduce, distribute, and display your content within the App.
+        </Typography>
+        <Typography variant="h6">
+          <strong>3. Intellectual Property</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          All content and materials available in the App, including but not
+          limited to text, graphics, logos, icons, images, audio clips,
+          software, trademarks, copyrights, and trade secrets are the property
+          of Oriki Technologies Ltd or its licensors and are protected by
+          intellectual property laws.
+        </Typography>
+        <Typography variant="body1">
+          You may not use, reproduce, distribute, or modify any content from the
+          App without obtaining prior written permission from us.{" "}
+        </Typography>
+        <Typography variant="h6">
+          <strong>4. Privacy</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          Your use of the App is also governed by our Privacy Policy, which
+          outlines how we collect, use, disclose, and protect your personal
+          information. By using the App, you consent to the practices described
+          in the Privacy Policy.
+        </Typography>
+        <Typography variant="h6">
+          <strong>5. Disclaimers and Limitation of Liability</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          The App is provided "as is" and "as available" without any warranties,
+          representations, or guarantees of any kind, either express or implied.
+        </Typography>
+        <Typography variant="body1" paragraph>
+          To the fullest extent permitted by applicable law, Oriki Technologies
+          Ltd and its affiliates, directors, employees, and agents shall not be
+          liable for any direct, indirect, incidental, special, or consequential
+          damages arising out of or in any way connected to your use of the App.
+        </Typography>
+        <Typography variant="h6">
+          <strong>6. Third-Party Links</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          The App may contain links to third-party websites or services that are
+          not owned or controlled by us. We have no control over, and assume no
+          responsibility for, the content, privacy policies, or practices of any
+          third-party websites or services.
+        </Typography>
+        <Typography variant="h6">
+          <strong>7. Termination</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          We reserve the right to suspend or terminate your access to the App at
+          our discretion, without notice or liability, for any reason, including
+          if you violate these Terms. Upon termination, your right to use the
+          App will immediately cease.{" "}
+        </Typography>
+        <Typography variant="h6">
+          <strong>8. Changes to Terms</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          We may update these Terms from time to time. Any changes will be
+          effective when posted on this page. Your continued use of the App
+          after changes to the Terms indicates your acceptance of the modified
+          Terms.{" "}
+        </Typography>
+        <Typography variant="h6">
+          <strong>9. Governing Law</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          These Terms shall be governed by and construed in accordance with the
+          laws of the Federal Republic of Nigeria, without regard to its
+          conflict of law principles.
+        </Typography>
+        <Typography variant="h6">
+          <strong>10. Contact Us</strong>
+        </Typography>
+        <Typography variant="body1" paragraph>
+          If you have any questions about these Terms, please contact us at
+          hello@orikitechnologies.com.
+        </Typography>
+      </Box>
+    </Container>
   );
 };
 

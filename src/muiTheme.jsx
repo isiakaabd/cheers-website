@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 const fuciaPink = "#E20489";
 const main = "#6A1347";
-const lightFuciaPink = "#FFB9EB";
+const lightFuciaPink = " #FFB9EB73";
 const dark = "#5A5959";
 const lightGrey = "#8A8A8A";
 const white = "#fff";
@@ -15,6 +15,12 @@ export const muiTheme = createTheme({
       dark,
       deepRed,
       lightFuciaPink,
+    },
+    text: {
+      secondary: "#494949",
+      info: lightGrey,
+      primary: dark,
+      main: fuciaPink,
     },
     primary: {
       main,
@@ -42,12 +48,13 @@ export const muiTheme = createTheme({
     //   main: disable,
     // },
   },
+
   typography: {
     fontFamily: ["Raleway", "sans-serif", "Roboto"].join(", "),
     fontSize: 10,
     htmlFontSize: 10,
     h1: {
-      fontSize: "clamp(3rem, 2vw, 4.5rem)",
+      fontSize: "clamp(4rem, 2vw, 4.5rem)",
       fontWeight: 800,
       color: "#fff",
       // lineHeight: "3rem",
@@ -77,6 +84,12 @@ export const muiTheme = createTheme({
       fontSize: "clamp(1.6rem,2vw, 2.4rem)",
       fontWeight: 500,
       lineHeight: 1.85,
+    },
+    body1: {
+      fontSize: "clamp(1.8rem,2vw, 2rem)",
+      fontWeight: 500,
+      lineHeight: 1.85,
+      textAlign: "justify",
     },
 
     btn: {
