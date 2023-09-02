@@ -173,7 +173,7 @@ export default function BottomAppBar() {
               variant="h5"
               sx={{ width: "100%", textAlign: "center" }}
             >
-              Copyright © 2022 Cheers
+              Copyright © {new Date().getFullYear()} Cheers
             </Typography>
           </Grid>
         </Toolbar>
