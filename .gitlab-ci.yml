@@ -2,6 +2,6 @@ deploy:
   stage: deploy
   script:
     - echo "Deploying the Vite app to DigitalOcean..."
-    - scp -r ./dist/* root@$DROPLET_IP:/var/www/html
+    - scp -r ./dist/* root@143.244.150.225:/var/www/html
   only:
     - main
