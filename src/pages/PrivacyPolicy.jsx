@@ -5,7 +5,11 @@ const PolicyAndTermsContent = () => {
   return (
     <Container maxWidth="lg">
       <Box my={4}>
-        <Typography variant="h3" gutterBottom sx={{ textAlign: "center" }}>
+        <Typography
+          variant="h3"
+          gutterBottom
+          sx={{ textAlign: "center", fontWeight: 600 }}
+        >
           Privacy Policy for Cheers
         </Typography>
         <Typography variant="h5" color="text.secondary" paragraph>

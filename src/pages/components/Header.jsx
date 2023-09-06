@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { bg, logo, bg01, bg05, contact, bg07, bg06, bg03, bg02 } from "@assets";
+import { logo, bg05, bg07, bg06 } from "@assets";
 import { Grid } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -30,16 +30,16 @@ const pages = [
 ];
 const pagesAcc = [
   {
-    text: "Create exceptional moments",
-    subText: null,
-    route: "/faq",
-    imgPath: bg07,
-  },
-  {
     text: "Make all your Birthday wishes come true",
     subText: null,
     route: "/",
     imgPath: bg06,
+  },
+  {
+    text: "Create exceptional moments",
+    subText: null,
+    route: "/faq",
+    imgPath: bg07,
   },
 
   {
@@ -63,19 +63,23 @@ function Header() {
     setAnchorElNav(null);
   };
   const { pathname } = useLocation();
+  let control = pathname !== "/terms-of-use" && pathname !== "/policy";
+
   return (
     <Grid
       item
       container
       sx={{
         position: "relative",
-        minHeight: "100vh",
+        minHeight: control ? "100vh" : "100%",
         backgroundColor: `#E20489`,
         backgroundSize: "cover",
         backgroundOrigin: "content-box",
       }}
     >
-      <Swipe activeStep={activeStep} setActiveStep={setActiveStep} />
+      {control && (
+        <Swipe activeStep={activeStep} setActiveStep={setActiveStep} />
+      )}
       <AppBar
         position="static"
         elevation={0}
@@ -176,39 +180,41 @@ function Header() {
           </Toolbar>
         </Container>
       </AppBar>
-      <Grid
-        item
-        container
-        flexDirection={"column"}
-        sx={{ zIndex: 400, maxWidth: { md: "70%", xs: "80vw" }, mx: "auto" }}
-        alignItems={"center"}
-      >
-        <Typography variant="h1" textAlign={"center"} gutterBottom>
-          {pathname === "/contact"
-            ? "Talk to us, we are here 24/7 "
-            : pagesAcc[activeStep].text}{" "}
-        </Typography>
-        {(pagesAcc[activeStep].subText || pathname === "/contact") && (
-          <Typography variant="h5" textAlign={"center"} color={"#fff"}>
+      {control && (
+        <Grid
+          item
+          container
+          flexDirection={"column"}
+          sx={{ zIndex: 400, maxWidth: { md: "70%", xs: "80vw" }, mx: "auto" }}
+          alignItems={"center"}
+        >
+          <Typography variant="h1" textAlign={"center"} gutterBottom>
             {pathname === "/contact"
-              ? "Providing an exciting new way to be the center of attention as you celebrate your special day is personal for us, so we’d love to hear from you."
-              : pagesAcc[activeStep].subText}
+              ? "Talk to us, we are here 24/7 "
+              : pagesAcc[activeStep].text}{" "}
           </Typography>
-        )}
-        {pathname !== "/contact" && pathname !== "/terms-of-use" && (
-          <Grid item mt={6}>
-            <Button
-              variant="contained"
-              href="#day"
-              color="error"
-              disableElevation
-              sx={{ fontSize: "2.6rem", fontWeight: 700 }}
-            >
-              Get Started
-            </Button>
-          </Grid>
-        )}
-      </Grid>
+          {(pagesAcc[activeStep].subText || pathname === "/contact") && (
+            <Typography variant="h5" textAlign={"center"} color={"#fff"}>
+              {pathname === "/contact"
+                ? "Providing an exciting new way to be the center of attention as you celebrate your special day is personal for us, so we’d love to hear from you."
+                : pagesAcc[activeStep].subText}
+            </Typography>
+          )}
+          {pathname !== "/contact" && pathname !== "/terms-of-use" && (
+            <Grid item mt={6}>
+              <Button
+                variant="contained"
+                href="#day"
+                color="error"
+                disableElevation
+                sx={{ fontSize: "2.6rem", fontWeight: 700 }}
+              >
+                Get Started
+              </Button>
+            </Grid>
+          )}
+        </Grid>
+      )}
     </Grid>
   );
 }

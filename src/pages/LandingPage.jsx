@@ -16,7 +16,7 @@ import {
   googleplay,
   home01,
   home02,
-  home03,
+  imgLast as home03,
   home04,
   home09,
   home10,
@@ -329,10 +329,12 @@ const LandingPage = () => {
                 src={home03}
                 variant="square"
                 sx={{
+                  "& img": {
+                    objectFit: "contain",
+                  },
                   width: "100%",
                   borderRadius: "1.3rem",
                   height: "100%",
-                  objectFit: "contain",
                 }}
               />
             </Grid>
@@ -506,36 +508,6 @@ const LandingPage = () => {
                               name="email"
                               placeholder="Enter Valid Email"
                             />
-                          </Grid>
-                          <Grid
-                            item
-                            container
-                            flexWrap={"nowrap"}
-                            alignItems={"center"}
-                          >
-                            <Grid item container>
-                              <FormikControl
-                                name="checkbox"
-                                control="checkbox"
-                                label={
-                                  <Typography variant="h5" fontWeight={400}>
-                                    {" "}
-                                    I have read and agreed to the
-                                    <Typography
-                                      variant="span"
-                                      color="text.main"
-                                      fontWeight={700}
-                                      component={Link}
-                                      to="/terms-of-use"
-                                      sx={{ textDecoration: "none" }}
-                                    >
-                                      {" "}
-                                      terms and conditions
-                                    </Typography>
-                                  </Typography>
-                                }
-                              />
-                            </Grid>
                           </Grid>
                         </Grid>
                         <Grid item mt="auto" sx={{ width: "100%" }}>

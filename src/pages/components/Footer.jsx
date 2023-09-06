@@ -13,11 +13,7 @@ import {
 } from "@mui/material";
 
 import { logo, service04, service05, service06, testimonial } from "@assets";
-import {
-  LocationOnOutlined,
-  MailOutline,
-  MapOutlined,
-} from "@mui/icons-material";
+import { ContactPageOutlined, MailOutline } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 import Socials from "./Socials";
@@ -25,17 +21,17 @@ import { Fragment } from "react";
 
 const options = [
   {
-    name: "Contact Us",
-    link: "/contact",
-  },
-  {
     name: "FAQ",
     link: "/#faq",
   },
-  // {
-  //   name: "Services",
-  //   link: "/service",
-  // },
+  {
+    name: "Terms of Use",
+    link: "/terms-of-use",
+  },
+  {
+    name: "Privacy Policy",
+    link: "/policy",
+  },
   {
     name: "Become a CHEERS VENDOR",
     link: "https://cheers-vendor.netlify.app",
@@ -131,6 +127,24 @@ export default function BottomAppBar() {
                       />
                     </ListItemButton>
                   </ListItem>
+                  <ListItem disableGutters dense>
+                    <ListItemButton
+                      disableGutters
+                      component={Link}
+                      to={`/contact`}
+                    >
+                      <ListItemIcon sx={{ minWidth: "4rem" }}>
+                        <ContactPageOutlined
+                          color="error"
+                          sx={{ fontSize: "3rem" }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText
+                        primaryTypographyProps={text}
+                        primary="Contact Us"
+                      />
+                    </ListItemButton>
+                  </ListItem>
                 </List>
               </Grid>
               <Grid item>
@@ -142,11 +156,12 @@ export default function BottomAppBar() {
                   {options.map((item, idx) => (
                     <ListItemButton
                       dense
-                      component={Link}
+                      component={item.link ? Link : "a"}
+                      href={item.link && "#faq"}
                       to={item.link}
+                      key={idx}
                       disableGutters
                       disableTouchRipple
-                      // href={item.link === "#faq" && "#faq"}
                       disableRipple
                       sx={{
                         textDecoration: "underline",
