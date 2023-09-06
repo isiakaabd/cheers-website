@@ -9,6 +9,7 @@ import {
   Toolbar,
   IconButton,
   Typography,
+  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { logo, bg05, bg07, bg06 } from "~assets";
@@ -64,7 +65,7 @@ function Header() {
   };
   const { pathname } = useLocation();
   let control = pathname !== "/terms-of-use" && pathname !== "/policy";
-
+  const theme = useTheme();
   return (
     <Grid
       item
@@ -83,7 +84,13 @@ function Header() {
       <AppBar
         position="static"
         elevation={0}
-        sx={{ height: "max-content", background: "transparent" }}
+        sx={{
+          height: "max-content",
+          backgroundColor: !control
+            ? theme.palette.common.deepRed
+            : "transparent",
+          // background: "transparent",
+        }}
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ py: "1rem" }}>
@@ -166,7 +173,6 @@ function Header() {
                   sx={{
                     my: 2,
                     color: "white",
-
                     fontSize: { xs: "1.4rem", sm: "1.6rem", md: "1.9rem" },
                     display: "block",
                     textTransform: "capitalize",
