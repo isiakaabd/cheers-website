@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik/dist";
 import { ArrowForward } from "@mui/icons-material";
 import { Grid, Button, Typography } from "@mui/material";
-import FormikControl from "@validation/FormikControl";
+import FormikControl from "~validation/FormikControl";
 
 const ContactUs = () => {
   return (

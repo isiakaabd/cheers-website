@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { logo, bg05, bg07, bg06 } from "@assets";
+import { logo, bg05, bg07, bg06 } from "~assets";
 import { Grid } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -160,7 +160,7 @@ function Header() {
                   component={Link}
                   to={page.route}
                   disableElevation
-                  variant={page.name === "Vendor" && "contained"}
+                  variant={page.name === "Vendor" ? "contained" : "text"}
                   color="error"
                   target="_blank"
                   sx={{

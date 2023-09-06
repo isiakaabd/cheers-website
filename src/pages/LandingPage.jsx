@@ -26,7 +26,7 @@ import {
   image14,
   image15,
   service03,
-} from "../assets";
+} from "~assets";
 import {
   ArrowForward,
   CampaignOutlined,
@@ -34,7 +34,7 @@ import {
   WalletOutlined,
 } from "@mui/icons-material";
 import { Form, Formik } from "formik/dist";
-import FormikControl from "../validation/FormikControl";
+import FormikControl from "~validation/FormikControl";
 import Accordions from "./components/Accordions";
 import { Link } from "react-router-dom";
 import Dialogs from "./components/Dialog";

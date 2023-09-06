@@ -1,6 +1,5 @@
 import Input from "./Input";
 import SelectComponent from "./Select";
-import PropTypes from "prop-types";
 import CheckBox from "./Checkboxs";
 import TextArea from "./Textarea";
 
@@ -20,9 +19,7 @@ const FormikControl = ({ control, ...rest }) => {
       return null;
   }
 };
-FormikControl.propTypes = {
-  control: PropTypes.string,
-};
+
 FormikControl.defaultProps = {
   control: "input",
 };

@@ -1,9 +1,10 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import PrivateRoutes from "./PrivateRoutes";
 
 import { ThemeProvider } from "@mui/material";
-import { muiTheme } from "@/muiTheme";
-import App from "@/App";
+
+import { muiTheme } from "~/muiTheme";
+import PrivateRoutes from "./PrivateRoutes";
+import App from "~/App";
 
 const AppRoutes = () => {
   return (

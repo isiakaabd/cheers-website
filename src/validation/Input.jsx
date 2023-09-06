@@ -1,5 +1,4 @@
 import { Field, ErrorMessage } from "formik/dist";
-import PropTypes from "prop-types";
 import { FormControl, Grid, InputLabel, OutlinedInput } from "@mui/material";
 import { TextError } from "./TextError";
 
@@ -21,10 +20,6 @@ const Input = (props) => {
       <ErrorMessage name={name} component={TextError} />
     </Grid>
   );
-};
-Input.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string,
 };
 
 export default Input;

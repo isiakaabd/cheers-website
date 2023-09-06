@@ -7,9 +7,9 @@ import {
   FAQ,
   Gallery,
   Contact,
-} from "@pages";
-import { MainPage } from "@pages/components";
-import PrivacyPolicy from "@pages/PrivacyPolicy";
+} from "~pages";
+import { MainPage } from "~pages/components";
+import PrivacyPolicy from "~pages/PrivacyPolicy";
 const PrivateRoutes = () => {
   return (
     <Routes>

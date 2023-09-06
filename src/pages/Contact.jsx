@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { Question2Icon, QuestionIcon } from "@assets";
+import { Question2Icon, QuestionIcon } from "~assets";
 import Socials from "./components/Socials";
 import { ContactUs } from "./components";
 

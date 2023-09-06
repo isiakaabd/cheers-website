@@ -2,19 +2,19 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@assets/*": [
+            "~assets/*": [
                 "src/assets/*"
             ],
-            "@pages/*": [
+            "~pages/*": [
                 "src/pages/*"
             ],
-            "@routes/*": [
+            "~routes/*": [
                 "src/routes/*"
             ],
-            "@validation/*": [
+            "~validation/*": [
                 "src/validation/*"
             ],
-            "@/*": [
+            "~/*": [
                 "src/*"
             ]
         }

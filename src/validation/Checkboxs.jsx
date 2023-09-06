@@ -1,6 +1,5 @@
 import { Checkbox, FormControlLabel, Grid, Typography } from "@mui/material";
 import { useFormikContext, Field } from "formik/dist";
-import PropTypes from "prop-types";
 
 const Switchs = ({ label, name, size, value, ...rest }) => {
   return (
@@ -33,8 +32,5 @@ const CheckBox = (props) => {
     </Grid>
   );
 };
-CheckBox.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string,
-};
+
 export default CheckBox;

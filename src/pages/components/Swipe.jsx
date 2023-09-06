@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Avatar } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { bg07, bg05, bg06, bg, bg03, contact, bg02 } from "@assets";
+import { bg07, bg05, bg06, contact } from "~assets";
 import { useLocation } from "react-router-dom";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);

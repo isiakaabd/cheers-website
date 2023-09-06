@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import { logo, service04, service05, service06, testimonial } from "@assets";
+import { logo } from "~assets";
 import { ContactPageOutlined, MailOutline } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
@@ -44,7 +44,12 @@ const text = {
 };
 export default function BottomAppBar() {
   const theme = useTheme();
-
+  const scrollToElement = () => {
+    const element = document.getElementById("faq");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the element
+    }
+  };
   return (
     <Fragment>
       <CssBaseline />
@@ -156,10 +161,12 @@ export default function BottomAppBar() {
                   {options.map((item, idx) => (
                     <ListItemButton
                       dense
-                      component={item.link ? Link : "a"}
-                      href={item.link && "#faq"}
+                      component={Link}
                       to={item.link}
                       key={idx}
+                      onClick={
+                        item.link === "/#faq" ? scrollToElement : undefined
+                      }
                       disableGutters
                       disableTouchRipple
                       disableRipple
@@ -175,7 +182,7 @@ export default function BottomAppBar() {
                           primary={item.name}
                           primaryTypographyProps={{
                             fontSize: "clamp(1.4rem,2vw,1.85rem)",
-                            lineHEight: "2.1rem",
+                            lineHeight: "2.1rem",
                           }}
                         />
                       </ListItem>

@@ -1,7 +1,4 @@
 import { Button, Grid, Typography } from "@mui/material";
-
-import { service01 } from "@assets";
-
 import {
   ArrowForward,
   CampaignOutlined,
@@ -10,7 +7,7 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
-import { A, C, D, E, F, G, H, I, J, K, L, M } from "@assets/index";
+import { A, C, D, E, F, G, H, I, J, K, L, M, service01 } from "~assets";
 
 const Service = () => {
   let flex = {
