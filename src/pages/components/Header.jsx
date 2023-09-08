@@ -16,7 +16,8 @@ import { logo, bg05, bg07, bg06 } from "~assets";
 import { Grid } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import Swipe from "./Swipe";
+// import Swipe from "./Swipe";
+import ImageSlider from "./Hero";
 
 const pages = [
   {
@@ -71,20 +72,23 @@ function Header() {
       item
       container
       sx={{
-        position: "relative",
         minHeight: control ? "100vh" : "100%",
         backgroundColor: `#E20489`,
         backgroundSize: "cover",
         backgroundOrigin: "content-box",
       }}
     >
-      {control && (
+      {/* {control && (
         <Swipe activeStep={activeStep} setActiveStep={setActiveStep} />
-      )}
+      )} */}
+
+      {/* </Grid> */}
+      {/* <ImageSlider /> */}
       <AppBar
         position="static"
         elevation={0}
         sx={{
+          zIndex: 4000,
           height: "max-content",
           backgroundColor: !control
             ? theme.palette.common.deepRed
@@ -186,41 +190,7 @@ function Header() {
           </Toolbar>
         </Container>
       </AppBar>
-      {control && (
-        <Grid
-          item
-          container
-          flexDirection={"column"}
-          sx={{ zIndex: 400, maxWidth: { md: "70%", xs: "80vw" }, mx: "auto" }}
-          alignItems={"center"}
-        >
-          <Typography variant="h1" textAlign={"center"} gutterBottom>
-            {pathname === "/contact"
-              ? "Talk to us, we are here 24/7 "
-              : pagesAcc[activeStep].text}{" "}
-          </Typography>
-          {(pagesAcc[activeStep].subText || pathname === "/contact") && (
-            <Typography variant="h5" textAlign={"center"} color={"#fff"}>
-              {pathname === "/contact"
-                ? "Providing an exciting new way to be the center of attention as you celebrate your special day is personal for us, so we’d love to hear from you."
-                : pagesAcc[activeStep].subText}
-            </Typography>
-          )}
-          {pathname !== "/contact" && pathname !== "/terms-of-use" && (
-            <Grid item mt={6}>
-              <Button
-                variant="contained"
-                href="#day"
-                color="error"
-                disableElevation
-                sx={{ fontSize: "2.6rem", fontWeight: 700 }}
-              >
-                Get Started
-              </Button>
-            </Grid>
-          )}
-        </Grid>
-      )}
+      <ImageSlider />
     </Grid>
   );
 }
