@@ -503,7 +503,7 @@ const LandingPage = () => {
                               placeholder="Enter Name"
                             />
                           </Grid>
-                          <Grid item container>
+                          <Grid item container mb={2}>
                             <FormikControl
                               name="email"
                               placeholder="Enter Valid Email"

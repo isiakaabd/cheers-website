@@ -53,8 +53,6 @@ const pagesAcc = [
 ];
 
 function Header() {
-  const [activeStep, setActiveStep] = useState(0);
-
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -190,7 +188,7 @@ function Header() {
           </Toolbar>
         </Container>
       </AppBar>
-      <ImageSlider />
+      {control && <ImageSlider />}
     </Grid>
   );
 }
